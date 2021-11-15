@@ -113,7 +113,7 @@ body {
     header {
         width: 100%;
         display: block;
-        background-color: $white;
+        background-color: $black;
         border-bottom: $border-width solid $white; 
         padding-bottom: $offset3;
         padding-top: $offset3;
@@ -121,7 +121,7 @@ body {
         text-align: #{$headlines-alignment};
 
         h1 {
-            color: $black;
+            color: $white;
             padding-left: $content-padding-left;
         }
     }

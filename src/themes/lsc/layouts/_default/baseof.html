@@ -12,7 +12,7 @@
     <meta property="og:url" content="{{ .Site.Params.SiteURL }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content=”{{- .Site.Params.Description -}}” />
-    {{- $ogimage := resources.Get "images/ogimage.jpg" -}}
+    {{- $ogimage := resources.Get "image/ogimage.jpg" -}}
     <meta property="og:image" content="{{ .Site.Params.SiteURL }}{{ $ogimage.RelPermalink }}">
     <meta property="og:type" content="website" />
 
