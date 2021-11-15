@@ -14,4 +14,7 @@ These networks are often presented and perceived through individual images they 
 
 During the development of these prototypes I will draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction.
 
+These networks are often presented and perceived through individual images they generate. In this project I will focus on representing the entire imagination space of a generative network. How can this numerical space be navigated meaningfully? Can this space be represented metaphorically as a forest, a labyrinth or a synthetic gallery?
+
+During the development of these prototypes I will draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction.
  

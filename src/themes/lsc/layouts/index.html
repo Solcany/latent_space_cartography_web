@@ -2,7 +2,7 @@
     <main aria-role="main" id="home">
        <section id="project">
        		<h2> Project </h2>
-       		<div class="content">
+       		<div class="wrapper">
 				{{ with .Site.GetPage "/headless_project" }}
 					{{- .Content -}}
 				{{ end }}

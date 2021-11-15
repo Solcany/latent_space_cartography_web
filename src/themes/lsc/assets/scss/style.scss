@@ -17,7 +17,7 @@ $f4: 1.6rem;
 $f5: 1.3rem;
 $f6: 1.2rem;
 
-$breakpoint-not-small: 'screen and (min-width: 30em)' !default;
+$breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
 $breakpoint-large: 'screen and (min-width: 60em)' !default;
 $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
@@ -26,12 +26,15 @@ $black: #0A0A0A;
 $white: #fff;
 $gray: #737373;
 $bronze: #585738;
+$scrollbar-track-color: #525252;
+$scrollbar-thumb-color: #A9A9A9;
+$scrollbar-thumb-hover-color: #D9D9D9;
 
 $transition-time: 0.275s;
 $border-width: 1px;
 $headlines-alignment: 'left';
 $content-padding-left: $offset5;
-$content-padding-right: $offset7;
+$content-padding-right: $offset6;
 
 h1, h2, h3, p, strong, a {
     color: $white;
@@ -81,34 +84,30 @@ html.js img.fadein {
         }
 }
 
- /* width */
 ::-webkit-scrollbar {
-  width: 30px;
-  background: red;
-  background-color: red;
+  width: 6px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
-  background: red;
+  background: $scrollbar-track-color;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: $scrollbar-thumb-color;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: $scrollbar-thumb-hover-color;
 } 
 
 
 body {
     background-color: $black;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    height: auto;
+
+    @media #{$breakpoint-not-small} {
+        height: 100vh;
+    }
+
 
     header {
         width: 100%;
@@ -129,47 +128,80 @@ body {
 
     main#home {
         display: flex;
-        flex-wrap: nowrap;
         overflow: hidden;
         height: 100%;
+        flex-wrap: wrap;
+        @media #{$breakpoint-not-small} {
+            flex-wrap: nowrap;
+        }
+
 
         section {
-            width: 50%;
             display: inline-block;
             height: 100%;
             display: flex;
             flex-direction: column;
+            width: 100%;
+
+            @media #{$breakpoint-not-small} {
+                width: 50%;
+            }
+
+            h2 {               
+                text-align: #{$headlines-alignment};
+                padding-left: $content-padding-left;
+                padding-top: $offset2;
+                padding-bottom: $offset2;
+                border-bottom: $border-width solid $white;                
+            }
+
+            div.wrapper {
+                width: 100%;
+                overflow-y: auto;
+                scrollbar-width: thin;
+                scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+            }  
+
 
             &#project {
                 background-color: $black;
-                h2 {
-                    background-color: $black;
-                    display: block;
-                }
 
-                p {
-                    padding-left: $content-padding-left;
-                    padding-right: $content-padding-right;
-                }   
+                div.wrapper {
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding-bottom: $offset5;
 
-                strong {
-                    display: inline-block;
-                    padding-top: $offset5;
-                    padding-bottom: $offset3;                        
-                }          
+                    h2 {
+                        background-color: $black;
+                        display: block;
+                    }
+
+                    p {
+                       padding-left: $content-padding-left;
+                       padding-right: $content-padding-right;
+                       padding-bottom: $offset3;                        
+                    }   
+
+                    strong {
+                        display: inline-block;
+                        padding-top: $offset5;
+                    }     
+                }     
             }
 
             &#activity {
                 background-color: $bronze;
+
                 @media #{$breakpoint-not-small} {
                     border-left: $border-width solid $white;
-                }                  
+                }
+
                 h2 {
                     background-color: $bronze;                   
                 }
 
                 ul#activity_log {
-                    padding-top: $offset5;
+                    padding-top: $offset4;
                     width: 100%;
 
                     li:first-child {
@@ -185,14 +217,15 @@ body {
                         display: block;                        
                         padding-left: $content-padding-left;
                         padding-right: $content-padding-right;
-                        padding-top: $offset5;
+                        padding-top: $offset4;
                         padding-bottom: $offset5;
                         box-sizing: border-box;
                         border-bottom: $border-width solid $gray;
 
-                        div {
+                        div.content {
                             width: 100%;
-                            overflow-x: hidden;
+                            box-sizing: border-box;
+
                             span.date {
                                 display: block;
                                 @include text_font;
@@ -217,20 +250,7 @@ body {
                         }
                     }
                 }
-            }
-
-            h2 {               
-                text-align: #{$headlines-alignment};
-                padding-left: $content-padding-left;
-                padding-top: $offset2;
-                padding-bottom: $offset2;
-                border-bottom: $border-width solid $white;                
-            }
-
-            div {
-                width: 100%;
-                overflow-y: auto;
-            }            
+            }          
         }
     }
 }
