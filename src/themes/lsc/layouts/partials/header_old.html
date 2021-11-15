@@ -1,0 +1,20 @@
+
+<header>
+	<a href="{{- .Site.BaseURL -}}">{{- .Site.Title -}}</a>
+	{{- $currentPage := . -}}
+	<nav>
+		<ul>
+			{{- range $index, $nav_element := .Site.Menus.main -}}
+			{{- $active := or ($currentPage.IsMenuCurrent "main" $nav_element) ($currentPage.HasMenuCurrent "main" $nav_element) -}}
+			{{- $active = or $active (eq $nav_element.Name $currentPage.Title) -}}
+			{{- $active = or $active (and (eq $nav_element.Name "Projects") (eq $currentPage.Section "Projects")) -}}
+			<li class="{{ if $active }} nav_active {{ end }}">
+				<a href="{{ .URL | relURL }}">
+					{{- $nav_element.Name -}}
+				</a>
+		</li>
+			{{- end -}}
+		</ul>
+	</nav>
+	<span></span>
+</header>

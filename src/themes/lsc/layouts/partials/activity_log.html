@@ -1,0 +1,16 @@
+<h2> Activity </h2>
+<div>
+<ul id="activity_log">
+{{- $logs := (where $.Site.RegularPages "Section" "headless_log") -}}
+{{- $logs := (where $logs "Params.draft" false) -}}
+
+{{ range $logs }}
+    <li id="{{ .Title }}">
+    	<div>
+    	<span class="date">{{- .PublishDate.Format "1. 2. 2006" -}}</span>
+        {{- .Content -}} 
+    	</div>
+    </li>
+{{- end -}}
+</ul>
+</div>

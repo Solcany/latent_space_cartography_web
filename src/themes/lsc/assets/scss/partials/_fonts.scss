@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'text_font';
+    src: url('../fonts/IBMPlexSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'headline_font';
+    src: url('../fonts/HK-gothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@mixin text_font {
+    font-family: 'text_font',
+                 sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin headline_font {
+    font-family: 'headline_font',
+                 sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+

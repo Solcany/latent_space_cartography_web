@@ -1,0 +1,10 @@
+{{- $img := $.Page.Resources.GetMatch (.Get "src") -}}
+{{- $caption := (.Get "caption") -}}
+{{- $alt := (.Get "alt") -}}
+
+{{if (ne $img nil) }}
+<figure>
+	<img loading="lazy" class="fadein" onload="this.classList.add('loaded')" src="{{ $img.RelPermalink }}" {{if (ne $alt nil) }} alt="{{ $alt }}" {{ end }}/>
+	{{if (ne $caption nil) }}<figcaption>{{ $caption }}</figcaption> {{ end }}
+</figure>
+{{ end }}

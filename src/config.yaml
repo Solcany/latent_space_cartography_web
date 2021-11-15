@@ -1,0 +1,22 @@
+---
+baseURL: "/"
+languageCode: en-us
+Title: Latent Space Cartography
+theme:
+  - hugo-video
+  - lsc
+disableKinds:
+  - "taxonomy"
+  - "term"
+  - "sitemap"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+    Author: Matúš Solčány
+    Description: lsc
+    SiteURL: "https://lsc.lsc"
+---

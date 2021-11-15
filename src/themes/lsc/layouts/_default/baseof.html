@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{- .Site.Title -}}</title>
+	<meta name="description" content="{{ .Site.Params.Description }}">
+	<meta name="author" content="{{ .Site.Params.Description }}">
+
+    <meta property="og:title" content="{{ .Site.Title }}"/>
+    <meta property="og:url" content="{{ .Site.Params.SiteURL }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content=”{{- .Site.Params.Description -}}” />
+    {{- $ogimage := resources.Get "images/ogimage.jpg" -}}
+    <meta property="og:image" content="{{ .Site.Params.SiteURL }}{{ $ogimage.RelPermalink }}">
+    <meta property="og:type" content="website" />
+
+    {{- $favicon := resources.Get "favicon.png" -}}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon.RelPermalink }}">
+
+	{{- $css := resources.Get "scss/style.scss" | toCSS | minify -}}
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+	{{- $modernizr := resources.Get "js/vendor/modernizr.js" -}}
+	<script src="{{ $modernizr.RelPermalink }}"></script>
+</head>
+<body>
+	{{- partial "header" . -}}
+	{{- block "main" . -}}{{- end -}}
+	{{/* - partial "footer" . - */}}
+</body>
+</html>
