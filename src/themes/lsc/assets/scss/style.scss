@@ -25,7 +25,7 @@ $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
 
 $black: #0A0A0A;
 $white: #fff;
-$gray: #737373;
+$gray: #000;
 $bronze: #5F5B38; //#585738;
 $scrollbar-track-color: #525252;
 $scrollbar-thumb-color: #A9A9A9;
@@ -123,7 +123,7 @@ body {
     header {
         width: 100%;
         display: block;
-        background-color: $black;
+        background-color: $gray; //$black;
         border-bottom: $border-width solid $white; 
         padding-bottom: $offset3;
         padding-top: $offset3;
@@ -301,12 +301,19 @@ body {
     }
 
     footer {
-        text-align: center;
         color: $white;
         background-color: $black;
         border-top: $border-width solid $white;
         padding-top: $offset1;
         padding-bottom: $offset2;
+        padding-left: $content-padding-left;
+        text-align: left;
+
+        @media #{$breakpoint-not-small} {
+            padding-left: 0;
+            text-align: center;
+        }
+
     }
 }
 
