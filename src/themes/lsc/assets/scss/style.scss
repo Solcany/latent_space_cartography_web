@@ -6,38 +6,36 @@ $offset2: 0.5rem;
 $offset3: 1rem;
 $offset4: 2rem;
 $offset5: 4rem;
-$offset6: 6rem;
-$offset7: 13rem;
+$offset6: 8.5rem;
+//$offset7: 13rem;
 
-$f0: 4.0rem;
-$f1: 2.8rem;
-$f2: 2.0rem;
-$f3: 1.4rem;
+// $f0: 4.0rem;
+// $f1: 2.8rem;
+// $f2: 2.0rem;
+// $f3: 1.5rem;
 $f4: 1.3rem;
-$f5: 1.1rem;
+$f5: 1.15rem;
 $f6: 1.0rem;
 $f7: 0.9rem;
 
 $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
-$breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
-$breakpoint-large: 'screen and (min-width: 60em)' !default;
-$breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
-
+// $breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
+// $breakpoint-large: 'screen and (min-width: 60em)' !default;
+// $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
 $black: #0A0A0A;
 $white: #fff;
-$gray: #000;
 $bronze: #5F5B38; //#585738;
-$scrollbar-track-color: #525252;
-$scrollbar-thumb-color: #A9A9A9;
+$gray: #302F23;
+$scrollbar-track-color: $gray;
+$scrollbar-thumb-color: #9E9E98;
 $scrollbar-thumb-hover-color: #D9D9D9;
-
 $transition-time: 0.275s;
 $border-width: 1px;
 $headlines-alignment: 'left';
 
 $content-padding-left: $offset2;
 $content-padding-right: $offset3;
-$content-padding-left-ns: $offset5;
+$content-padding-left-ns: $offset4;
 $content-padding-right-ns: $offset6;
 
 h1, h2, h3, p, strong, a {
@@ -46,11 +44,11 @@ h1, h2, h3, p, strong, a {
 
 h1 {
     @include headline_font;
-    font-size: $f5;
+    font-size: $f4;
 }
 
 h2 {
-    @include text_font;
+    @include headline_font;
     text-transform: uppercase;
     font-size: $f5;
 
@@ -67,12 +65,12 @@ p, footer {
     font-size: $f5;
 
     strong {
-        @include headline_font;  
+        @include headline_font;          
         line-height: 1.3em;      
     } 
-    @media #{$breakpoint-not-small} {
-        font-size: $f6;
-    }        
+    // @media #{$breakpoint-not-small} {
+    //     font-size: $f5;
+    // }        
 }
 
 figure {
@@ -123,7 +121,7 @@ body {
     header {
         width: 100%;
         display: block;
-        background-color: $gray; //$black;
+        background-color: $black;
         border-bottom: $border-width solid $white; 
         padding-bottom: $offset3;
         padding-top: $offset3;
@@ -134,11 +132,11 @@ body {
         }
 
         h1 {
-            text-align: center;
             color: $white;
-            text-align: center;
-            padding-left: $content-padding-left-ns;
+            text-align: left;
+            padding-left: $content-padding-left;
             @media #{$breakpoint-not-small} {
+                text-align: center;
                 padding-left: 0; 
 
             }            
@@ -263,7 +261,7 @@ body {
                         padding-top: $offset3;
                         padding-bottom: $offset4;
                         box-sizing: border-box;
-                        border-bottom: $border-width solid $black;
+                        border-bottom: $border-width solid $gray;
                         @media #{$breakpoint-not-small} {
                             padding-left: $content-padding-left-ns;
                             padding-right: $content-padding-right-ns;
@@ -278,6 +276,7 @@ body {
                             span.date {
                                 display: block;
                                 @include text_font;
+                                font-size: $f7;
                                 color: white;
                                 padding-bottom: $offset3;
                             }

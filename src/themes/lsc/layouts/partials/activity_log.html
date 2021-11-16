@@ -7,7 +7,7 @@
 {{ range $logs }}
     <li id="{{ .Title }}">
     	<div class="content">
-    	<span class="date">{{- .PublishDate.Format "1. 2. 2006" -}}</span>
+    	<span class="date">{{- .PublishDate.Format "Jan 2 2006" -}}</span>
         {{- .Content -}} 
     	</div>
     </li>
