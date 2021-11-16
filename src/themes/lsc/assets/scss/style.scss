@@ -9,13 +9,14 @@ $offset5: 4rem;
 $offset6: 6rem;
 $offset7: 13rem;
 
-$f0: 4.5rem;
-$f1: 3.6rem;
-$f2: 2.8rem;
-$f3: 1.8rem;
-$f4: 1.6rem;
-$f5: 1.3rem;
-$f6: 1.2rem;
+$f0: 4.0rem;
+$f1: 2.8rem;
+$f2: 2.0rem;
+$f3: 1.4rem;
+$f4: 1.3rem;
+$f5: 1.1rem;
+$f6: 1.0rem;
+$f7: 0.9rem;
 
 $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
@@ -25,7 +26,7 @@ $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
 $black: #0A0A0A;
 $white: #fff;
 $gray: #737373;
-$bronze: #585738;
+$bronze: #5F5B38; //#585738;
 $scrollbar-track-color: #525252;
 $scrollbar-thumb-color: #A9A9A9;
 $scrollbar-thumb-hover-color: #D9D9D9;
@@ -33,8 +34,11 @@ $scrollbar-thumb-hover-color: #D9D9D9;
 $transition-time: 0.275s;
 $border-width: 1px;
 $headlines-alignment: 'left';
-$content-padding-left: $offset5;
-$content-padding-right: $offset6;
+
+$content-padding-left: $offset2;
+$content-padding-right: $offset3;
+$content-padding-left-ns: $offset5;
+$content-padding-right-ns: $offset6;
 
 h1, h2, h3, p, strong, a {
     color: $white;
@@ -42,27 +46,33 @@ h1, h2, h3, p, strong, a {
 
 h1 {
     @include headline_font;
+    font-size: $f5;
 }
 
 h2 {
     @include text_font;
     text-transform: uppercase;
+    font-size: $f5;
+
 }
 
 h3 {
     @include headline_font;
+    font-size: $f5;    
 }
 
-p {
+p, footer {
     @include text_font;
     line-height: 1.2em;
-    font-size: $f6;
+    font-size: $f5;
 
     strong {
-        @include headline_font;            
-        font-size: $f6;
-        line-height: 1.2em;
+        @include headline_font;  
+        line-height: 1.3em;      
     } 
+    @media #{$breakpoint-not-small} {
+        font-size: $f6;
+    }        
 }
 
 figure {
@@ -99,15 +109,16 @@ html.js img.fadein {
 
 
 body {
-    background-color: $black;
     display: flex;
     flex-direction: column;
     height: auto;
+    overflow-y: scroll;
+    background-color: $black;
 
     @media #{$breakpoint-not-small} {
         height: 100vh;
+        overflow-y: hidden;
     }
-
 
     header {
         width: 100%;
@@ -117,11 +128,20 @@ body {
         padding-bottom: $offset3;
         padding-top: $offset3;
         color: $white;
-        text-align: #{$headlines-alignment};
+        text-align: center;
+        @media #{$breakpoint-not-small} {
+            text-align: left;
+        }
 
         h1 {
+            text-align: center;
             color: $white;
-            padding-left: $content-padding-left;
+            text-align: center;
+            padding-left: $content-padding-left-ns;
+            @media #{$breakpoint-not-small} {
+                padding-left: 0; 
+
+            }            
         }
     }
 
@@ -135,14 +155,12 @@ body {
             flex-wrap: nowrap;
         }
 
-
         section {
             display: inline-block;
             height: 100%;
             display: flex;
             flex-direction: column;
             width: 100%;
-
             @media #{$breakpoint-not-small} {
                 width: 50%;
             }
@@ -152,7 +170,10 @@ body {
                 padding-left: $content-padding-left;
                 padding-top: $offset2;
                 padding-bottom: $offset2;
-                border-bottom: $border-width solid $white;                
+                border-bottom: $border-width solid $white; 
+                @media #{$breakpoint-not-small} {
+                    padding-left: $content-padding-left-ns;
+                }                                   
             }
 
             div.wrapper {
@@ -169,35 +190,57 @@ body {
                 div.wrapper {
                     box-sizing: border-box;
                     width: 100%;
-                    padding-bottom: $offset5;
-
+                    padding-bottom: $offset3;
+                    @media #{$breakpoint-not-small} {
+                        padding-bottom: $offset5;                        
+                    }  
+                    img {
+                        padding-bottom: $offset3;
+                    }
                     h2 {
                         background-color: $black;
                         display: block;
                     }
+                    h3 {
+                        padding-left: $content-padding-left;
+                        padding-bottom: $offset3;                        
 
+                        @media #{$breakpoint-not-small} {
+                            padding-left: $content-padding-left-ns;
+                        }                           
+                    }                    
                     p {
-                       padding-left: $content-padding-left;
-                       padding-right: $content-padding-right;
-                       padding-bottom: $offset3;                        
+                        padding-left: $content-padding-left;
+                        padding-right: $content-padding-right;
+                        padding-bottom: $offset3;                        
+                        @media #{$breakpoint-not-small} {
+                            padding-left: $content-padding-left-ns;
+                            padding-right: $content-padding-right-ns;
+                        }                           
                     }   
-
                     strong {
                         display: inline-block;
-                        padding-top: $offset5;
+                        padding-top: $offset3;
+                        padding-bottom: $offset2;
+                        @media #{$breakpoint-not-small} {
+                            padding-top: $offset4;
+                            padding-bottom: $offset3;
+                        }                          
                     }     
                 }     
             }
 
             &#activity {
                 background-color: $bronze;
-
+                border-top: $border-width solid $white;
                 @media #{$breakpoint-not-small} {
                     border-left: $border-width solid $white;
+                    border-top: none;
+
                 }
 
                 h2 {
-                    background-color: $bronze;                   
+                    background-color: $bronze; 
                 }
 
                 ul#activity_log {
@@ -217,10 +260,16 @@ body {
                         display: block;                        
                         padding-left: $content-padding-left;
                         padding-right: $content-padding-right;
-                        padding-top: $offset4;
-                        padding-bottom: $offset5;
+                        padding-top: $offset3;
+                        padding-bottom: $offset4;
                         box-sizing: border-box;
-                        border-bottom: $border-width solid $gray;
+                        border-bottom: $border-width solid $black;
+                        @media #{$breakpoint-not-small} {
+                            padding-left: $content-padding-left-ns;
+                            padding-right: $content-padding-right-ns;
+                            padding-top: $offset4;
+                            padding-bottom: $offset5;                            
+                        }     
 
                         div.content {
                             width: 100%;
@@ -239,12 +288,9 @@ body {
 
                             p {
                                 padding-bottom: $offset3;
-                            }
 
-                            figure {
-                                img {
-                                    border: $border-width solid $gray;
-
+                                &:last-child {
+                                    padding-bottom: 0;
                                 }
                             }
                         }
@@ -252,6 +298,15 @@ body {
                 }
             }          
         }
+    }
+
+    footer {
+        text-align: center;
+        color: $white;
+        background-color: $black;
+        border-top: $border-width solid $white;
+        padding-top: $offset1;
+        padding-bottom: $offset2;
     }
 }
 
