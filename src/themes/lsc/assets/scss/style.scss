@@ -13,7 +13,7 @@ $offset6: 8.5rem;
 // $f1: 2.8rem;
 // $f2: 2.0rem;
 // $f3: 1.5rem;
-$f4: 1.3rem;
+$f4: 1.35rem;
 $f5: 1.15rem;
 $f6: 1.0rem;
 $f7: 0.9rem;
@@ -50,6 +50,7 @@ h1 {
 h2 {
     @include headline_font;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
     font-size: $f5;
 
 }
