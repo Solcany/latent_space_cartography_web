@@ -29,7 +29,7 @@ $gray: #302F23;
 $scrollbar-track-color: $gray;
 $scrollbar-thumb-color: #9E9E98;
 $scrollbar-thumb-hover-color: #D9D9D9;
-$transition-time: 0.275s;
+$transition-time: 0.3s;
 $border-width: 1px;
 $headlines-alignment: 'left';
 
@@ -68,10 +68,7 @@ p, footer {
     strong {
         @include headline_font;          
         line-height: 1.3em;      
-    } 
-    // @media #{$breakpoint-not-small} {
-    //     font-size: $f5;
-    // }        
+    }      
 }
 
 figure {
@@ -81,7 +78,11 @@ figure {
     }
 }
 
-html.js img.fadein {
+html.no-js .fadein {
+    opacity: 1;
+}
+
+html.js .fadein {
         opacity: 0.0; 
         -webkit-transition: all $transition-time ease-in; 
         -moz-transition: all $transition-time ease-in; 
@@ -138,7 +139,7 @@ body {
             padding-left: $content-padding-left;
             @media #{$breakpoint-not-small} {
                 text-align: center;
-                padding-left: 0; 
+                padding-left: $content-padding-left-ns; 
 
             }            
         }
@@ -203,10 +204,14 @@ body {
                     h3 {
                         padding-left: $content-padding-left;
                         padding-bottom: $offset3;                        
-
+                        padding-top: $offset4;
                         @media #{$breakpoint-not-small} {
                             padding-left: $content-padding-left-ns;
-                        }                           
+                        }                     
+                    }
+
+                    h3:first-child {
+                        padding-top: 0;
                     }                    
                     p {
                         padding-left: $content-padding-left;
@@ -225,6 +230,19 @@ body {
                             padding-top: $offset4;
                             padding-bottom: $offset3;
                         }                          
+                    }
+
+                    a#sci_link {
+                        display: block;
+                        padding-left: $content-padding-left;
+                        @media #{$breakpoint-not-small} {
+                            padding-left: $content-padding-left-ns;
+                        }                          
+                        img#sci_logo {
+                            @media #{$breakpoint-not-small} {
+                                width: 100px;
+                            }  
+                        }                         
                     }     
                 }     
             }

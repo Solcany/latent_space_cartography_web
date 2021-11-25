@@ -5,7 +5,9 @@
        		<div class="wrapper">
 				{{ with .Site.GetPage "/headless_project" }}
 					{{- .Content -}}
-				{{ end }}
+				{{ end }}    
+				{{- $sci_logo := resources.Get "image/sci_logo.gif" -}}
+				<a id="sci_link" href="https://stimuleringsfonds.nl/en/"><img id="sci_logo" src="{{ $sci_logo.RelPermalink}}"></a>
 			</div>
        </section>
        <section id="activity">

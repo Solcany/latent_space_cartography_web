@@ -6,19 +6,36 @@ slug: landing-page
 headless: true
 ---
 
-**This website is dedicated to the 6 months long artistic research project Latent Space Cartography. The purpose of this website is to track the progress of the project and present the outputs. This project is work of Matus Solcany, for questions please reach out at matus.solcany@protonmail.com . This project is made possible with the support of Stimuleringsfonds.**
+**Latent Space Cartography is an ongoing research and data exploration project.**
 
 {{<imghp hpage="/headless_project" src="image/lsc_map.jpg" alt="b">}}
 
-### Why
-
-These networks are often presented and perceived through individual images they generate. In this project I will focus on representing the entire imagination space of a generative network. How can this numerical space be navigated meaningfully? Can this space be represented metaphorically as a forest, a labyrinth or a synthetic gallery?
-
-During the development of these prototypes I will draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction.
-
 ### What
 
-These networks are often presented and perceived through individual images they generate. In this project I will focus on representing the entire imagination space of a generative network. How can this numerical space be navigated meaningfully? Can this space be represented metaphorically as a forest, a labyrinth or a synthetic gallery?
 
-During the development of these prototypes I will draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction.
+I'm developing experimental interfaces for exploration of latent spaces of image generating neural networks. A popular example of such network is the face generating [StyleGAN3](https://www.youtube.com/watch?v=0zaGYLPj4Kk) model able to generate photo realistic portraits of non existing people. 
+
+Latent space can be thought of as the imagination space that holds the nummerical inspiration for all the possibile images that a network can generate.
+
+
+### Why
+
+Latent spaces are hyperdimensional statistical spaces without any representation in the world. 
+
+
+These networks are often perceived through individual images they generate. In this project I will work on visualizing the entire imagination space of a generative network.
+Once visualised – how can this space be navigated meaningfully? In this space up, down, left and right mean very little. Moving in one direction in this space might represent images of dogs whereas the opposite direction cats. Can this space be represented metaphorically as a forest, a labyrinth or a synthetic gallery?  
+
+### How
+
+By building a series of small interactive prototypes I aim to develop my own intuition for the sense of scale, direction, and methods of exploration of latent spaces. I draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction.
+
+This website serves as a journal for documenting this journey.
+
+### Who
+
+I'm [Matúš Solčány](https://matussolcany.com) a digital designer and creative coder. In my work I create interactive experiences and interfaces for exploration and navigation of emerging digital landscapes.  
+
+This project is made possible with the support of [Creative Industries Fund NL](https://stimuleringsfonds.nl/en/).
+
  

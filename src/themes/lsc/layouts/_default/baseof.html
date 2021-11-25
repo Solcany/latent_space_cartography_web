@@ -29,5 +29,14 @@
 	{{- partial "header" . -}}
 	{{- block "main" . -}}{{- end -}}
 	{{- partial "footer" . -}}
+
+	<script>
+		var videos = document.getElementsByTagName('video');
+		for(let i = 0; i < videos.length; i++) {	
+			videos[i].addEventListener('loadeddata', function() {
+		    	videos[i].classList.add("loaded");
+			}, false);
+		}
+	</script>
 </body>
 </html>
