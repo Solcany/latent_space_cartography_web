@@ -1,3 +1,5 @@
 .DS_STORE
 *.ttf
 /web_assets
+public/
+*.mp4

@@ -12,7 +12,7 @@ $offset6: 8.5rem;
 // $f0: 4.0rem;
 // $f1: 2.8rem;
 // $f2: 2.0rem;
-// $f3: 1.5rem;
+$f3: 1.45rem;
 $f4: 1.35rem;
 $f5: 1.15rem;
 $f6: 1.0rem;
@@ -25,12 +25,13 @@ $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $black: #0A0A0A;
 $white: #fff;
 $bronze: #5F5B38; //#585738;
-$gray: #302F23;
+$gray: #303030;
 $scrollbar-track-color: $gray;
 $scrollbar-thumb-color: #9E9E98;
 $scrollbar-thumb-hover-color: #D9D9D9;
 $transition-time: 0.3s;
 $border-width: 1px;
+$border-color: #fff;
 $headlines-alignment: 'left';
 
 $content-padding-left: $offset2;
@@ -47,17 +48,24 @@ h1 {
     font-size: $f4;
 }
 
-h2 {
-    @include headline_font;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: $f5;
-
+h2, 
+#contact .details p,
+#contact .details a {
+    @include text_font;
+    letter-spacing: 0.7px;
+    font-size: $f3;
 }
 
 h3 {
+
     @include headline_font;
-    font-size: $f5;    
+    letter-spacing: 0.5px;
+    font-size: $f5;
+}
+
+h4 {
+    @include headline_font;
+    font-size: $f5;   
 }
 
 p, footer {
@@ -69,6 +77,11 @@ p, footer {
         @include headline_font;          
         line-height: 1.3em;      
     }      
+}
+
+a {
+    @include text_font;
+    font-size: $f5;
 }
 
 figure {
@@ -124,7 +137,7 @@ body {
         width: 100%;
         display: block;
         background-color: $black;
-        border-bottom: $border-width solid $white; 
+        //border-bottom: $border-width solid $border-color; 
         padding-bottom: $offset3;
         padding-top: $offset3;
         color: $white;
@@ -138,7 +151,7 @@ body {
             text-align: left;
             padding-left: $content-padding-left;
             @media #{$breakpoint-not-small} {
-                text-align: center;
+                text-align: left;
                 padding-left: $content-padding-left-ns; 
 
             }            
@@ -150,165 +163,205 @@ body {
         display: flex;
         overflow: hidden;
         height: 100%;
+        flex-direction: column;
         flex-wrap: wrap;
-        @media #{$breakpoint-not-small} {
-            flex-wrap: nowrap;
-        }
 
-        section {
-            display: inline-block;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            @media #{$breakpoint-not-small} {
-                width: 50%;
-            }
-
-            h2 {               
-                text-align: #{$headlines-alignment};
+        section#introduction {
+                width: 100%;
+                border-bottom: $border-width solid $border-color;
+                padding-right: $content-padding-left;
                 padding-left: $content-padding-left;
-                padding-top: $offset2;
-                padding-bottom: $offset2;
-                border-bottom: $border-width solid $white; 
                 @media #{$breakpoint-not-small} {
                     padding-left: $content-padding-left-ns;
-                }                                   
-            }
+                    padding-right: $offset6;
 
-            div.wrapper {
-                width: 100%;
-                overflow-y: auto;
-                scrollbar-width: thin;
-                scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
-            }  
-
-
-            &#project {
-                background-color: $black;
-
-                div.wrapper {
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding-bottom: $offset3;
-                    @media #{$breakpoint-not-small} {
-                        padding-bottom: $offset5;                        
-                    }  
-                    img {
-                        padding-bottom: $offset3;
-                    }
-                    h2 {
-                        background-color: $black;
-                        display: block;
-                    }
-                    h3 {
-                        padding-left: $content-padding-left;
-                        padding-bottom: $offset3;                        
-                        padding-top: $offset4;
-                        @media #{$breakpoint-not-small} {
-                            padding-left: $content-padding-left-ns;
-                        }                     
-                    }
-
-                    h3:first-child {
-                        padding-top: 0;
-                    }                    
-                    p {
-                        padding-left: $content-padding-left;
-                        padding-right: $content-padding-right;
-                        padding-bottom: $offset3;                        
-                        @media #{$breakpoint-not-small} {
-                            padding-left: $content-padding-left-ns;
-                            padding-right: $content-padding-right-ns;
-                        }                           
-                    }   
-                    strong {
-                        display: inline-block;
-                        padding-top: $offset3;
-                        padding-bottom: $offset2;
-                        @media #{$breakpoint-not-small} {
-                            padding-top: $offset4;
-                            padding-bottom: $offset3;
-                        }                          
-                    }
-
-                    a#sci_link {
-                        display: block;
-                        padding-left: $content-padding-left;
-                        @media #{$breakpoint-not-small} {
-                            padding-left: $content-padding-left-ns;
-                        }                          
-                        img#sci_logo {
-                            @media #{$breakpoint-not-small} {
-                                width: 100px;
-                            }  
-                        }                         
-                    }     
-                }     
-            }
-
-            &#activity {
-                background-color: $bronze;
-                border-top: $border-width solid $white;
-                @media #{$breakpoint-not-small} {
-                    border-left: $border-width solid $white;
-                    border-top: none;
-
-                }
+                }  
 
                 h2 {
-                    background-color: $bronze; 
+                    padding-bottom: $offset3;
+                     
                 }
 
-                ul#activity_log {
-                    padding-top: $offset4;
-                    width: 100%;
+                div#contact {
+                    color: white;
+                    padding-bottom: $offset3;
 
-                    li:first-child {
-                       padding-top: 0;
+                    .details,
+                    .show,
+                    .hide:target {
+                      display: none;
+                    }
+                    .hide:target + .show,
+                    .hide:target ~ .details {
+                      display: block;
                     }
 
-                    li:last-child {
-                        border-bottom: none;
-                    }
-
-                    li {
-                        width: 100%;
-                        display: block;                        
-                        padding-left: $content-padding-left;
-                        padding-right: $content-padding-right;
+                    .details {
                         padding-top: $offset3;
-                        padding-bottom: $offset4;
+                    }
+                }
+            }
+
+        div.columns { 
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+            flex-wrap: wrap;
+            @media #{$breakpoint-not-small} {
+                flex-wrap: nowrap;
+            }
+
+            section.column {
+                display: inline-block;
+                height: 100%;
+                overflow-y: auto;
+                box-sizing: border-box;
+                width: 100%;
+                @media #{$breakpoint-not-small} {
+                    width: 50%;
+                }
+
+
+                h3 {               
+                    text-align: #{$headlines-alignment};
+                    padding-left: $content-padding-left;
+                    padding-top: $offset2;
+                    padding-bottom: $offset2;
+                    border-bottom: $border-width solid $border-color; 
+                    @media #{$breakpoint-not-small} {
+                        padding-left: $content-padding-left-ns;
+                    }                                   
+                }
+
+                div.wrapper {
+                    width: 100%;
+                    overflow-y: auto;
+                    scrollbar-width: thin;
+                    scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+                }  
+
+                &#project {
+                    background-color: $black;
+
+                    div.wrapper {
                         box-sizing: border-box;
-                        border-bottom: $border-width solid $gray;
+                        width: 100%;
+                        padding-bottom: $offset3;
                         @media #{$breakpoint-not-small} {
-                            padding-left: $content-padding-left-ns;
-                            padding-right: $content-padding-right-ns;
+                            padding-bottom: $offset5;                        
+                        }  
+                        img {
+                            padding-bottom: $offset3;
+                        }
+
+                        h4 {
+                            color: white;
+                            padding-left: $content-padding-left;
+                            padding-bottom: $offset3;                        
                             padding-top: $offset4;
-                            padding-bottom: $offset5;                            
+                            @media #{$breakpoint-not-small} {
+                                padding-left: $content-padding-left-ns;
+                            }                     
+                        }
+
+                        h4:first-child {
+                            padding-top: 0;
+                        }                    
+                        p {
+                            padding-left: $content-padding-left;
+                            padding-right: $content-padding-right;
+                            padding-bottom: $offset3;                        
+                            @media #{$breakpoint-not-small} {
+                                padding-left: $content-padding-left-ns;
+                                padding-right: $content-padding-right-ns;
+                            }                           
+                        }   
+                        strong {
+                            display: inline-block;
+                            padding-top: $offset3;
+                            padding-bottom: $offset2;
+                            @media #{$breakpoint-not-small} {
+                                padding-top: $offset4;
+                                padding-bottom: $offset3;
+                            }                          
+                        }
+
+                        a#sci_link {
+                            display: block;
+                            padding-left: $content-padding-left;
+                            @media #{$breakpoint-not-small} {
+                                padding-left: $content-padding-left-ns;
+                            }                          
+                            img#sci_logo {
+                                width: 100px;
+                            }                         
                         }     
+                    }     
+                }
 
-                        div.content {
+                &#activity {
+                    background-color: $bronze;
+                    border-top: $border-width solid $border-color;
+                    @media #{$breakpoint-not-small} {
+                        border-left: $border-width solid $border-color;
+                        border-top: none;
+                    }
+
+                    h2 {
+                        background-color: $bronze; 
+                    }
+
+                    ul#activity_log {
+                        padding-top: $offset4;
+                        width: 100%;
+
+                        li:first-child {
+                           padding-top: 0;
+                        }
+
+                        li:last-child {
+                            border-bottom: none;
+                        }
+
+                        li {
                             width: 100%;
+                            display: block;                        
+                            padding-left: $content-padding-left;
+                            padding-right: $content-padding-right;
+                            padding-top: $offset3;
+                            padding-bottom: $offset4;
                             box-sizing: border-box;
+                            border-bottom: $border-width solid $gray;
+                            @media #{$breakpoint-not-small} {
+                                padding-left: $content-padding-left-ns;
+                                padding-right: $content-padding-right-ns;
+                                padding-top: $offset4;
+                                padding-bottom: $offset5;                            
+                            }     
 
-                            span.date {
-                                display: block;
-                                @include text_font;
-                                font-size: $f7;
-                                color: white;
-                                padding-bottom: $offset3;
-                            }
+                            div.content {
+                                width: 100%;
+                                box-sizing: border-box;
 
-                            h3 { 
-                                padding-bottom: $offset3;
-                            }
+                                span.date {
+                                    display: block;
+                                    @include text_font;
+                                    font-size: $f7;
+                                    color: white;
+                                    padding-bottom: $offset3;
+                                }
 
-                            p {
-                                padding-bottom: $offset3;
+                                h3 { 
+                                    padding-bottom: $offset3;
+                                }
 
-                                &:last-child {
-                                    padding-bottom: 0;
+                                p {
+                                    padding-bottom: $offset3;
+
+                                    &:last-child {
+                                        padding-bottom: 0;
+                                    }
                                 }
                             }
                         }
