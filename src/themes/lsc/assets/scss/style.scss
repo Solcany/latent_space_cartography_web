@@ -12,7 +12,8 @@ $offset6: 8.5rem;
 // $f0: 4.0rem;
 // $f1: 2.8rem;
 // $f2: 2.0rem;
-$f3: 27px;
+$f2: 35px;
+$f3: 30px;
 $f4: 23px;
 $f5: 20px;
 $f6: 16px;
@@ -49,16 +50,16 @@ h1, h2, h3, h4, p, strong, a {
 
 h1 {
     @include headline_font;
-    font-size: $f3;
+    font-size: $f2;
 }
 
 h2, 
 #contact .details p,
 #contact .details a {
     @include headline_font;
-    line-height: 26px;
+    line-height: 34px;
     //letter-spacing: 1.0px;
-    font-size: $f4;
+    font-size: $f3;
 }
 
 h3 {
@@ -189,10 +190,9 @@ body {
                     div#contact {
                         padding-bottom: $offset4;
 
-                        p,a  {
+                        p, a {
                             @include text_font;
                         }
-
                         a {
                             position: relative;
                         }
@@ -204,12 +204,12 @@ body {
                             display: inline-block;
                         } 
 
-                        a#show .caret {
-                            transform: rotate(180deg);
-                        }
+
 
                         a#show, a#hide {
                             position :relative;
+                            @include text_font;
+
                         }
 
                         .details,
@@ -220,11 +220,15 @@ body {
 
                         a#hide:target + a#show {
                             display: inline-block;
+                            .caret {
+                                transform: rotate(180deg);
+                            }
                         }
 
                         a#hide:target ~ .details {
                           display: block;
                         }
+
                         .details {
                             padding-top: $offset3;
                         }
@@ -358,7 +362,6 @@ body {
                             padding-top: $offset3;
                             padding-bottom: $offset4;
                             box-sizing: border-box;
-                            border-bottom: $border-width solid $gray;
                             @media #{$breakpoint-not-small} {
                                 padding-left: $content-padding-left-ns;
                                 padding-right: $content-padding-right-ns;
@@ -378,16 +381,12 @@ body {
                                     padding-bottom: $offset3;
                                 }
 
-                                h3 { 
-                                    padding-bottom: $offset3;
-                                }
-
-                                p {
+                                figure,video, h3, p {
                                     padding-bottom: $offset3;
 
-                                    &:last-child {
+                                   &:last-child {
                                         padding-bottom: 0;
-                                    }
+                                    }                                    
                                 }
                             }
                         }
