@@ -8,24 +8,27 @@ headless: true
 
 {{<imghp hpage="/headless_project" src="image/lsc_map.jpg" alt="b">}}
 
-#### What
+#### What is latent space?
 
-I'm developing experimental interfaces for exploration of latent spaces of image generating neural networks. A popular example of such network is the face generating [StyleGAN3](https://www.youtube.com/watch?v=0zaGYLPj4Kk) model able to generate photo realistic portraits of non existing people. 
+Latent space can be thought of as the imagination of a  generative neural network such as [StyleGAN3](https://www.youtube.com/watch?v=0zaGYLPj4Kk) that creates photo realistic potraits of non existing people.
 
-Latent space can be thought of as the imagination space that holds the nummerical inspiration for all the possibile images that a network can generate.
+It is the space into which a neural network inscribes its understanding of images it is trained on. And from which this network gathers inspiration for new imagery.
 
+Initially this space has no meaning, it is the particular training data andthe network and that interpret the latent space and give it meaning. In the context of neural networks each latent space is unique.
 
-#### Why
+#### Why explore latent spaces?
 
-Latent spaces are hyperdimensional statistical spaces without any representation in the world. 
+Generative neural networks are used to create [artworks](https://www.theverge.com/2018/10/23/18013190/ai-art-portrait-auction-christies-belamy-obvious-robbie-barrat-gans), [artificial personalities](https://www.rosebud.ai/humansofai) and [artificial realities](https://www.technologyreview.com/2021/06/11/1026135/ai-synthetic-data/) for other AIs to learn from. These networks often perceived through the individual images they create. But what distinguishes them from the creative techniques of the past is the infinite variation of the images they create.
 
+Can the implications of this new method of creation be discussed without having a grasp on the space from which these creation come?
 
-These networks are often perceived through individual images they generate. In this project I will work on visualizing the entire imagination space of a generative network.
-Once visualised – how can this space be navigated meaningfully? In this space up, down, left and right mean very little. Moving in one direction in this space might represent images of dogs whereas the opposite direction cats. Can this space be represented metaphorically as a forest, a labyrinth or a synthetic gallery?  
+This project is an attempt to develop a visual understanding of the entire imagination of a generative neural network by visualising and exploring the latent space. 
 
-#### How
+What is the meaning of a region, a border, distance and direction in Latent space? Can the techniques of cartography be used to map this space?
 
-By building a series of small interactive prototypes I aim to develop my own intuition for the sense of scale, direction, and methods of exploration of latent spaces. I draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction. This website serves as a journal for documenting this journey.
+#### How to explore latent spaces?
+
+Over the course of next 6 months I aim to develop a series of prototypical interfaces for developing my intuition for the sense of scale, direction and navigation of latent spaces. I draw inspiration experimental video games, interactive data visualizations and non-linear interactive fiction. This website serves as a journal for documenting this journey.
 
 <br>
 

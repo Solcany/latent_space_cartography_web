@@ -6,7 +6,7 @@ slug: landing-page
 headless: true
 ---
 
-I’m Matúš Solčány a digital designer and creative coder. In my work I create interactive experiences and interfaces for exploration and navigation of emerging digital landscapes. Feel free to reach out at [matus.solcany@protonmail.com](mailto:matus.solcany@protonmail.com)
+I’m [Matúš Solčány](https://matussolcany.com) a digital designer and creative coder. Are you interested in the project? Email me at [matus.solcany@protonmail.com](mailto:matus.solcany@protonmail.com)
 
 
 

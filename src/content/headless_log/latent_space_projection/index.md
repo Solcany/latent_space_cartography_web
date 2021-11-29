@@ -6,4 +6,7 @@ draft: false
 
 {{< video src="media/video" alt="a rotating cloud of white points on black background" autoplay="true" muted="true" loop="true" controls="false" >}}
 
-I made the first 3d visualisation of a sample from latent space. Each point from the latent space is a seed that a generative neural network transforms into a image. The latent space is always the same, it's up to each neural network to interpret it into an image. Each point in the visualisation represents a collection of 128 random values. 
+#### Seeing multidimensional noise
+
+I built the first visualisation of a latent space. For now it's just a 128 dimensional points without any meaning reduced to 3 dimensions for the sake of the visualisation. Each point is a seed that could be interpreted by a generative neural network as an image.
+
