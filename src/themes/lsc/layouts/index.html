@@ -1,17 +1,19 @@
 {{- define "main" -}}
     <main aria-role="main" id="home">
        <section id="introduction">
-         {{- with .Site.GetPage "/headless_introduction" -}}
-          {{- .Content -}}
-         {{- end -}}
-        <div id="contact">
-          <a id="hide" href="#hide" class="hide">Contact ↓</a>
-          <a id="show" href="#show" class="show">Contact ↑</a>
-          <div class="details">
-           {{- with .Site.GetPage "/headless_contact" -}}
-            {{- .Content -}}
-           {{- end -}}
-          </div>
+           <div class="content">
+             {{- with .Site.GetPage "/headless_introduction" -}}
+              {{- .Content -}}
+             {{- end -}}
+            <div id="contact">
+              <a id="hide" href="#hide" class="hide">Contact ↓</a>
+              <a id="show" href="#show" class="show">Contact ↑</a>
+              <div class="details">
+               {{- with .Site.GetPage "/headless_contact" -}}
+                {{- .Content -}}
+               {{- end -}}
+              </div>
+            </div>
         </div>
        </section>
        <div class="columns">

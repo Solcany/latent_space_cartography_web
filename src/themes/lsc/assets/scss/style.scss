@@ -12,20 +12,24 @@ $offset6: 8.5rem;
 // $f0: 4.0rem;
 // $f1: 2.8rem;
 // $f2: 2.0rem;
-$f3: 1.45rem;
-$f4: 1.35rem;
-$f5: 1.15rem;
-$f6: 1.0rem;
-$f7: 0.9rem;
+$f3: 27px;
+$f4: 23px;
+$f5: 18px;
+$f6: 16px;
+$f7: 14px;
 
 $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 // $breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
 // $breakpoint-large: 'screen and (min-width: 60em)' !default;
 // $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
-$black: #0A0A0A;
+$black: #000;
 $white: #fff;
 $bronze: #5F5B38; //#585738;
 $gray: #303030;
+
+$green: #A7F650;
+$yellow: #FFF561;
+
 $scrollbar-track-color: $gray;
 $scrollbar-thumb-color: #9E9E98;
 $scrollbar-thumb-hover-color: #D9D9D9;
@@ -45,15 +49,16 @@ h1, h2, h3, p, strong, a {
 
 h1 {
     @include headline_font;
-    font-size: $f4;
+    font-size: $f3;
 }
 
 h2, 
 #contact .details p,
 #contact .details a {
-    @include text_font;
-    letter-spacing: 0.7px;
-    font-size: $f3;
+    @include headline_font;
+    line-height: 26px;
+    //letter-spacing: 1.0px;
+    font-size: $f4;
 }
 
 h3 {
@@ -126,7 +131,7 @@ body {
     flex-direction: column;
     height: auto;
     overflow-y: scroll;
-    background-color: $black;
+    background-color: $green;
 
     @media #{$breakpoint-not-small} {
         height: 100vh;
@@ -136,18 +141,18 @@ body {
     header {
         width: 100%;
         display: block;
-        background-color: $black;
+        background-color: $green;
         //border-bottom: $border-width solid $border-color; 
-        padding-bottom: $offset3;
+        padding-bottom: $offset4;
         padding-top: $offset3;
-        color: $white;
+        color: $black;
         text-align: center;
         @media #{$breakpoint-not-small} {
             text-align: left;
         }
 
         h1 {
-            color: $white;
+            color: $black;
             text-align: left;
             padding-left: $content-padding-left;
             @media #{$breakpoint-not-small} {
@@ -177,27 +182,38 @@ body {
 
                 }  
 
-                h2 {
-                    padding-bottom: $offset3;
-                     
-                }
-
-                div#contact {
-                    color: white;
-                    padding-bottom: $offset3;
-
-                    .details,
-                    .show,
-                    .hide:target {
-                      display: none;
-                    }
-                    .hide:target + .show,
-                    .hide:target ~ .details {
-                      display: block;
+                div.content {
+                    width: 90%;
+                    h2 {
+                        padding-bottom: $offset3;
+                        color: $black;
                     }
 
-                    .details {
-                        padding-top: $offset3;
+                    div#contact {
+                        padding-bottom: $offset3;
+                        color: $black;
+
+                        a {
+                            color: $black;
+                        }
+
+                        p {
+                            color: $black;
+                        }
+
+                        .details,
+                        .show,
+                        .hide:target {
+                          display: none;
+                        }
+                        .hide:target + .show,
+                        .hide:target ~ .details {
+                          display: block;
+                        }
+
+                        .details {
+                            padding-top: $offset3;
+                        }
                     }
                 }
             }
