@@ -6,8 +6,8 @@
               {{- .Content -}}
              {{- end -}}
             <div id="contact">
-              <a id="hide" href="#hide" class="hide">Contact ↓</a>
-              <a id="show" href="#show" class="show">Contact ↑</a>
+              <a id="hide" href="#hide" class="hide">Contact<span class="caret">^</span></a>
+              <a id="show" href="#show" class="show">Contact<span class="caret">^</span></a>
               <div class="details">
                {{- with .Site.GetPage "/headless_contact" -}}
                 {{- .Content -}}
@@ -18,7 +18,7 @@
        </section>
        <div class="columns">
          <section id="project" class="column">
-         		<h3> Project </h3>
+         		<h3> The project </h3>
          		<div class="wrapper">
       				{{- with .Site.GetPage "/headless_project" -}}
       					{{- .Content -}}

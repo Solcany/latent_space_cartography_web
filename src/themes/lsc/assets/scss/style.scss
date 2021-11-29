@@ -14,7 +14,7 @@ $offset6: 8.5rem;
 // $f2: 2.0rem;
 $f3: 27px;
 $f4: 23px;
-$f5: 18px;
+$f5: 20px;
 $f6: 16px;
 $f7: 14px;
 
@@ -35,7 +35,7 @@ $scrollbar-thumb-color: #9E9E98;
 $scrollbar-thumb-hover-color: #D9D9D9;
 $transition-time: 0.3s;
 $border-width: 1px;
-$border-color: #fff;
+$border-color: $black;
 $headlines-alignment: 'left';
 
 $content-padding-left: $offset2;
@@ -43,8 +43,8 @@ $content-padding-right: $offset3;
 $content-padding-left-ns: $offset4;
 $content-padding-right-ns: $offset6;
 
-h1, h2, h3, p, strong, a {
-    color: $white;
+h1, h2, h3, h4, p, strong, a {
+    color: $black;
 }
 
 h1 {
@@ -65,7 +65,7 @@ h3 {
 
     @include headline_font;
     letter-spacing: 0.5px;
-    font-size: $f5;
+    font-size: $f4;
 }
 
 h4 {
@@ -145,14 +145,12 @@ body {
         //border-bottom: $border-width solid $border-color; 
         padding-bottom: $offset4;
         padding-top: $offset3;
-        color: $black;
         text-align: center;
         @media #{$breakpoint-not-small} {
             text-align: left;
         }
 
         h1 {
-            color: $black;
             text-align: left;
             padding-left: $content-padding-left;
             @media #{$breakpoint-not-small} {
@@ -186,31 +184,47 @@ body {
                     width: 90%;
                     h2 {
                         padding-bottom: $offset3;
-                        color: $black;
                     }
 
                     div#contact {
-                        padding-bottom: $offset3;
-                        color: $black;
+                        padding-bottom: $offset4;
 
-                        a {
-                            color: $black;
+                        p,a  {
+                            @include text_font;
                         }
 
-                        p {
-                            color: $black;
+                        a {
+                            position: relative;
+                        }
+
+                        a .caret {
+                            position: absolute;
+                            right: -15px;
+                            bottom: 0;
+                            display: inline-block;
+                        } 
+
+                        a#show .caret {
+                            transform: rotate(180deg);
+                        }
+
+                        a#show, a#hide {
+                            position :relative;
                         }
 
                         .details,
-                        .show,
-                        .hide:target {
+                        a#show,
+                        a#hide:target {
                           display: none;
                         }
-                        .hide:target + .show,
-                        .hide:target ~ .details {
-                          display: block;
+
+                        a#hide:target + a#show {
+                            display: inline-block;
                         }
 
+                        a#hide:target ~ .details {
+                          display: block;
+                        }
                         .details {
                             padding-top: $offset3;
                         }
@@ -231,19 +245,18 @@ body {
             section.column {
                 display: inline-block;
                 height: 100%;
-                overflow-y: auto;
                 box-sizing: border-box;
                 width: 100%;
+
                 @media #{$breakpoint-not-small} {
                     width: 50%;
                 }
 
-
                 h3 {               
                     text-align: #{$headlines-alignment};
                     padding-left: $content-padding-left;
-                    padding-top: $offset2;
-                    padding-bottom: $offset2;
+                    padding-top: $offset3;
+                    padding-bottom: $offset3;
                     border-bottom: $border-width solid $border-color; 
                     @media #{$breakpoint-not-small} {
                         padding-left: $content-padding-left-ns;
@@ -252,13 +265,15 @@ body {
 
                 div.wrapper {
                     width: 100%;
+                    height: 100%;
+                    display: block;
                     overflow-y: auto;
                     scrollbar-width: thin;
                     scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
                 }  
 
                 &#project {
-                    background-color: $black;
+                    background-color: $green;
 
                     div.wrapper {
                         box-sizing: border-box;
@@ -272,7 +287,6 @@ body {
                         }
 
                         h4 {
-                            color: white;
                             padding-left: $content-padding-left;
                             padding-bottom: $offset3;                        
                             padding-top: $offset4;
@@ -317,15 +331,11 @@ body {
                 }
 
                 &#activity {
-                    background-color: $bronze;
+                    background-color: $yellow;
                     border-top: $border-width solid $border-color;
                     @media #{$breakpoint-not-small} {
                         border-left: $border-width solid $border-color;
                         border-top: none;
-                    }
-
-                    h2 {
-                        background-color: $bronze; 
                     }
 
                     ul#activity_log {
@@ -364,7 +374,7 @@ body {
                                     display: block;
                                     @include text_font;
                                     font-size: $f7;
-                                    color: white;
+                                    color: $black;
                                     padding-bottom: $offset3;
                                 }
 
