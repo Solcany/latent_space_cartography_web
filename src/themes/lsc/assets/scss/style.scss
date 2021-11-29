@@ -50,16 +50,30 @@ h1, h2, h3, h4, p, strong, a {
 
 h1 {
     @include headline_font;
-    font-size: $f2;
+    font-size: $f3;
+    @media #{$breakpoint-not-small} {
+        font-size: $f2;
+    }    
 }
 
-h2, 
+h2 {
+    @include headline_font;
+    line-height: 26px;
+    font-size: $f4;
+    @media #{$breakpoint-not-small} {
+        font-size: $f3;
+        line-height: 34px;
+    }     
+}
+
 #contact .details p,
 #contact .details a {
-    @include headline_font;
-    line-height: 34px;
-    //letter-spacing: 1.0px;
-    font-size: $f3;
+    @include text_font;
+    font-size: $f5;
+    @media #{$breakpoint-not-small} {
+        font-size: $f4;
+    }     
+
 }
 
 h3 {
@@ -190,9 +204,6 @@ body {
                     div#contact {
                         padding-bottom: $offset4;
 
-                        p, a {
-                            @include text_font;
-                        }
                         a {
                             position: relative;
                         }
@@ -204,14 +215,11 @@ body {
                             display: inline-block;
                         } 
 
-
-
                         a#show, a#hide {
-                            position :relative;
+                            position: relative;
                             @include text_font;
 
                         }
-
                         .details,
                         a#show,
                         a#hide:target {
@@ -220,13 +228,19 @@ body {
 
                         a#hide:target + a#show {
                             display: inline-block;
+
                             .caret {
-                                transform: rotate(180deg);
+                                bottom: -5px;
                             }
                         }
 
                         a#hide:target ~ .details {
                           display: block;
+                        }
+
+                        a#hide .caret {
+                            transform: rotate(180deg);
+                            bottom: 1px;
                         }
 
                         .details {
@@ -274,18 +288,18 @@ body {
                     overflow-y: auto;
                     scrollbar-width: thin;
                     scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+                    box-sizing: border-box;
+                    padding-bottom: $offset3;
+                    @media #{$breakpoint-not-small} {
+                        padding-bottom: $offset6;                        
+                    }                      
                 }  
 
                 &#project {
                     background-color: $green;
 
                     div.wrapper {
-                        box-sizing: border-box;
-                        width: 100%;
-                        padding-bottom: $offset3;
-                        @media #{$breakpoint-not-small} {
-                            padding-bottom: $offset5;                        
-                        }  
+
                         img {
                             padding-bottom: $offset3;
                         }
@@ -351,7 +365,7 @@ body {
                         }
 
                         li:last-child {
-                            border-bottom: none;
+                            padding-bottom: 0;
                         }
 
                         li {
