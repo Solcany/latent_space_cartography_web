@@ -1,13 +1,13 @@
 @import "partials/reset";
 @import "partials/fonts";
 
-$offset1: 0.25rem;
-$offset2: 0.5rem;
-$offset3: 1rem;
-$offset4: 2rem;
-$offset5: 4rem;
-$offset6: 8.5rem;
-//$offset7: 13rem;
+$offset1: 4px;
+$offset2: 8px;
+$offset3: 16px;
+$offset4: 32px;
+$offset5: 64px;
+$offset6: 136px;
+$offset7: 180px;
 
 // $f0: 4.0rem;
 // $f1: 2.8rem;
@@ -195,7 +195,7 @@ body {
                     box-sizing: border-box;
                     padding-right: $content-padding-right;
                     @media #{$breakpoint-not-small} {
-                        padding-right: $content-padding-right-ns;
+                        padding-right: 200px
                     }  
 
                     h2 {

@@ -15,13 +15,10 @@
     {{- $ogimage := resources.Get "image/ogimage.jpg" -}}
     <meta property="og:image" content="{{ .Site.Params.SiteURL }}{{ $ogimage.RelPermalink }}">
     <meta property="og:type" content="website" />
-
     {{- $favicon := resources.Get "favicon.png" -}}
     <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon.RelPermalink }}">
-
 	{{- $css := resources.Get "scss/style.scss" | toCSS | minify -}}
 	<link rel="stylesheet" href="{{ $css.RelPermalink }}">
-
 	{{- $modernizr := resources.Get "js/vendor/modernizr.js" -}}
 	<script src="{{ $modernizr.RelPermalink }}"></script>
 </head>

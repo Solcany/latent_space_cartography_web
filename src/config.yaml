@@ -17,6 +17,8 @@ markup:
 
 params:
     Author: Matúš Solčány
-    Description: lsc
-    SiteURL: "https://lsc.lsc"
+    Description: Latent Space Cartography is the ongoing research and data exploration project. The goal of this project is to develop ways to understand and navigate latent spaces in the context of generative neural networks.
+    SiteURL: "https://latent.garden"
 ---
+
+
