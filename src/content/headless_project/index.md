@@ -12,7 +12,7 @@ headless: true
 
 Latent space can be thought of as the imagination of a  generative neural network such as [StyleGAN3](https://www.youtube.com/watch?v=0zaGYLPj4Kk) that can synthesise photo realistic potraits of non existing people.
 
-It is the space into which a neural network inscribes its understanding of images it is trained on. Once trained on real imagery the network draws inspiration from this space to create artificial one.
+It is the space into which a neural network inscribes its understanding of images it is trained on. Once the network is trained on real imagery it draws inspiration from this space to create new artificial images.
 
 Initially this space has no meaning, it is the particular training data and the setup of the network that interpret the latent space and thus give it meaning. In the context of neural networks each latent space is unique.
 
