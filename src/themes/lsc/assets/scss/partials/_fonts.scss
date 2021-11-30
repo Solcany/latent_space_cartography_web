@@ -1,13 +1,21 @@
 @font-face {
     font-family: 'text_font';
-    src: url('../fonts/IBMPlexSans-Regular.ttf') format('truetype');
+    src: url('../fonts/ibmplexsans-regular.eot');
+    src: url('../fonts/ibmplexsans-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ibmplexsans-regular.woff2') format('woff2'),
+         url('../fonts/ibmplexsans-regular.woff') format('woff'),
+         url('../fonts/ibmplexsans-regular.ttf') format('truetype');    
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
     font-family: 'headline_font';
-    src: url('../fonts/Basteleur-Bold.ttf') format('truetype');
+    src: url('../fonts/basteleur-bold.eot');
+    src: url('../fonts/basteleur-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/basteleur-bold.woff2') format('woff2'),
+         url('../fonts/basteleur-bold.woff') format('woff'),
+         url('../fonts/basteleur-bold.ttf') format('truetype');    
     font-weight: normal;
     font-style: normal;
 
