@@ -26,7 +26,7 @@ $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $black: #000;
 $white: #fff;
 $bronze: #5F5B38; //#585738;
-$lightgray: #9FA196; //# yellowgray 87897E
+$lightgray: #C0C1B8; //# yellowgray 87897E
 $darkgray: #B6B6B6;
 $gray: #303030;
 $green: #C5FEAA;
@@ -353,7 +353,7 @@ body {
                 }
 
                 &#activity {
-                    background-color: $darkgray;
+                    background-color: $lightgray;
 
                     border-top: $border-width solid $border-color;
                     @media #{$breakpoint-not-small} {
