@@ -24,8 +24,10 @@ $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 // $breakpoint-large: 'screen and (min-width: 60em)' !default;
 // $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
 $black: #000;
+$almostblack: #0A0A0A;
 $white: #fff;
-$bronze: #5F5B38; //#585738;
+$bronze: #585738; //#585738;
+$darkbronze: #4D4C31;
 $lightgray: #9FA196; //# yellowgray 87897E
 $darkgray: #B6B6B6;
 $gray: #303030;
@@ -37,7 +39,7 @@ $scrollbar-thumb-color: #9E9E98;
 $scrollbar-thumb-hover-color: #D9D9D9;
 $transition-time: 0.3s;
 $border-width: 1px;
-$border-color: $black;
+$border-color: $lightgray;
 $headlines-alignment: 'left';
 
 $content-padding-left: $offset2;
@@ -45,8 +47,8 @@ $content-padding-right: $offset3;
 $content-padding-left-ns: $offset4;
 $content-padding-right-ns: $offset6;
 
-h1, h2, h3, h4, p, strong, a {
-    color: $black;
+h1, h2, h3, h4, p, strong, a, span.date {
+    color: $white;
 }
 
 h1 {
@@ -140,7 +142,7 @@ body {
     flex-direction: column;
     height: auto;
     overflow-y: scroll;
-    background-color: $green;
+    background-color: $bronze;
 
     @media #{$breakpoint-not-small} {
         height: 100vh;
@@ -150,7 +152,7 @@ body {
     header {
         width: 100%;
         display: block;
-        background-color: $green;
+        background-color: $bronze;
         //border-bottom: $border-width solid $border-color; 
         padding-bottom: $offset4;
         padding-top: $offset3;
@@ -183,7 +185,7 @@ body {
                 border-bottom: $border-width solid $border-color;
                 padding-right: $content-padding-right;
                 padding-left: $content-padding-left;
-                background-color: $green;
+                background-color: $bronze;
                 @media #{$breakpoint-not-small} {
                     padding-left: $content-padding-left-ns;
                     padding-right: $offset6;
@@ -300,8 +302,10 @@ body {
                 }  
 
                 &#project {
-                    background-color: $green;
-
+                    background-color: $darkbronze;
+                    @media #{$breakpoint-not-small} {
+                        background-color: $bronze;
+                    }      
                     div.wrapper {
 
                         img {
@@ -353,13 +357,12 @@ body {
                 }
 
                 &#activity {
-                    background-color: $yellow;
+                    background-color: $almostblack;
 
                     border-top: $border-width solid $border-color;
                     @media #{$breakpoint-not-small} {
                         border-left: $border-width solid $border-color;
                         border-top: none;
-                        background-color: $yellow;
                     }
 
                     ul#activity_log {
@@ -397,7 +400,6 @@ body {
                                     display: block;
                                     @include text_font;
                                     font-size: $f7;
-                                    color: $black;
                                     padding-bottom: $offset3;
                                 }
 
