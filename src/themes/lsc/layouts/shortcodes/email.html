@@ -1,0 +1,3 @@
+{{- $mailto := "&#109;&#097;&#105;&#108;&#116;&#111;:" -}}
+{{- $email := .Site.Params.email_encoded  -}}
+<a {{ print "href=" $mailto $email | safeHTMLAttr }}> {{ safeHTML $email }} </a>

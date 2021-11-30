@@ -6,8 +6,4 @@ slug: landing-page
 headless: true
 ---
 
-I’m [Matúš Solčány](https://matussolcany.com) a digital designer and creative coder. Are you interested in the project? Email me at [matus.solcany@protonmail.com](mailto:matus.solcany@protonmail.com)
-
-
-
- 
+I’m [Matúš Solčány](https://matussolcany.com) a digital designer and creative coder. Are you interested in the project? Email me at {{< email >}}
