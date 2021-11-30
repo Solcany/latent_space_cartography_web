@@ -150,7 +150,7 @@ body {
     header {
         width: 100%;
         display: block;
-        background-color: $green;
+        background-color: $black;
         //border-bottom: $border-width solid $border-color; 
         padding-bottom: $offset4;
         padding-top: $offset3;
@@ -160,6 +160,7 @@ body {
         }
 
         h1 {
+            color: $green;
             text-align: left;
             padding-left: $content-padding-left;
             @media #{$breakpoint-not-small} {
@@ -183,7 +184,7 @@ body {
                 border-bottom: $border-width solid $border-color;
                 padding-right: $content-padding-right;
                 padding-left: $content-padding-left;
-                background-color: $green;
+                background-color: $black;
                 @media #{$breakpoint-not-small} {
                     padding-left: $content-padding-left-ns;
                     padding-right: $offset6;
@@ -199,6 +200,7 @@ body {
                     }  
 
                     h2 {
+                        color: $green;
                         padding-bottom: $offset3;
                     }
 
@@ -207,7 +209,12 @@ body {
                         @media #{$breakpoint-not-small} {
                             padding-bottom: $offset3;
                         }
+
+                        p {
+                            color: $green;
+                        }
                         a {
+                            color: $green;
                             position: relative;
                         }
 
