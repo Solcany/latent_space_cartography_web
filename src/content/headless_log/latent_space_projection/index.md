@@ -8,5 +8,6 @@ draft: false
 
 #### Seeing multidimensional noise
 
-I built the first visualisation of a latent space. For now it's just a 128 dimensional points without any meaning reduced to 3 dimensions for the sake of the visualisation. Each point is a seed that could be interpreted by a generative neural network as an image.
+I created this visualisation of a sample from a multidimensional space. Each point in the sphere represents a random point of a 128 dimensional space. Each point is a seed that a generative neural network could interpret as an image. 
 
+The goal here is to have a basic visual representation of the space I'm working witth.

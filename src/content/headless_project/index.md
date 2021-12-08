@@ -22,14 +22,14 @@ Generative neural networks are used to create [artworks](https://www.theverge.co
 
 These networks shift the position of human creator from working direcetly on an artwork towards indirect curation of generated visual material. These networks create endlessly varying landscapes of visual material. Yet they are perceived through particular hand picked images they create.
 
-This project's goal is to develop a visual understanding of the entire imagination space of generative neural networks by visualising and exploring their latent spaces. 
+This project's goal is to develop visual understanding of the entire imagination space of generative neural networks by visualising and exploring their latent spaces. 
 
 
 #### The project goals
 
-Over the course of next 6 months I will develop a series of prototypical interfaces and data visualising for developing my understanding of latent spaces. Are traditional cartographical techniques relevant in this statistical space? What is the meaning of a region, a border, distance and direction in Latent space?
+Over the course of next 6 months I will develop a series of prototypical interfaces and data visualisations for developing my understanding of latent spaces. Are traditional cartographical techniques relevant in this statistical space? What is the meaning of a region, a border, distance and direction in Latent space?
 
-I draw inspiration experimental video games, interactive data visualizations and non-linear interactive fiction. This website serves as a journal for documenting this journey.
+I draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction. This website serves as a journal for documenting this journey.
 
 <br>
 
