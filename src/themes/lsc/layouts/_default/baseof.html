@@ -19,6 +19,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon.RelPermalink }}">
 	{{- $css := resources.Get "scss/style.scss" | toCSS | minify -}}
 	<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+	{{- $vanilla_lazyload := resources.Get "js/vendor/vanilla-lazyload.js" -}}	
+	<script src="{{ $vanilla_lazyload.RelPermalink }}"></script>
 	{{- $modernizr := resources.Get "js/vendor/modernizr.js" -}}
 	<script src="{{ $modernizr.RelPermalink }}"></script>
 </head>
@@ -28,12 +31,21 @@
 	{{/* - partial "footer" . - */}}
 
 	<script>
-		var videos = document.getElementsByTagName('video');
-		for(let i = 0; i < videos.length; i++) {	
-			videos[i].addEventListener('loadeddata', function() {
+		var container = document.getElementById("activity");
+		var videos = container.getElementsByTagName('video');
+		for(let i = 0; i < videos.length; i++) {
+			videos[i].removeAttribute("src");
+			for(let u = 0; u < videos[i].children.length; u++) {
+				videos[i].children[u].removeAttribute("src");
+			}	
+			videos[i].addEventListener('loadedmetadata', function() {
 		    	videos[i].classList.add("loaded");
 			}, false);
 		}
+		var lazyLoadInstance = new LazyLoad({
+			container: container,
+			elements_selector: "video"
+		});	
 	</script>
 </body>
 </html>
