@@ -4,7 +4,7 @@ date: 2021-11-24T15:32:20+01:00
 draft: false
 ---
 
-{{< video src="media/video" alt="a rotating cloud of white points on black background" autoplay="true" muted="true" loop="true" controls="false" >}}
+{{< video src="media/gauss_sample" alt="a rotating cloud of white points on black background" autoplay="true" muted="true" loop="true" controls="false" >}}
 
 #### Seeing multidimensional noise
 

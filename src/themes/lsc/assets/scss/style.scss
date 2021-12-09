@@ -113,13 +113,13 @@ html.no-js .fadein {
 }
 
 html.js .fadein {
-        opacity: 0.0; 
+        opacity: 1.0; 
         -webkit-transition: all $transition-time ease-in; 
         -moz-transition: all $transition-time ease-in; 
         -ms-transition: all $transition-time ease-in; 
         -o-transition: all $transition-time ease-in; 
 
-        &.loaded {
+        &.entered {
             opacity: 1;
         }
 }
