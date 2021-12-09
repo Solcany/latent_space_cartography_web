@@ -8,6 +8,4 @@ draft: false
 
 #### Seeing multidimensional noise
 
-I created this visualisation of a sample from a multidimensional space. Each point in the sphere represents a random point of a 128 dimensional space. Each point is a seed that a generative neural network could interpret as an image. 
-
-The goal here is to have a basic visual representation of the space I'm working witth.
+I created this visualisation of a sample from a multidimensional space. Each point in the sphere represents a random point of a 128 dimensional space reduced to 3 dimensions. Each point is a seed that a generative neural network could interpret as an image. The goal here is to have a basic visual representation of the space I'm working witth.

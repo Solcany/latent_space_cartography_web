@@ -14,7 +14,7 @@ Latent space can be thought of as the imagination of a  generative neural networ
 
 It is the space into which a neural network inscribes its understanding of images it is trained on. Once the network is trained on real imagery it draws inspiration from this space to create new artificial images.
 
-Initially this space has no meaning, it is the particular training data and the setup of the network that interpret the latent space and thus give it meaning. In the context of neural networks each latent space is unique.
+Initially this space has no meaning, it is the particular training data and the setup of the network that interpret the latent space and thus give it meaning. In the context of neural networks each latent space is xunique.
 
 #### Why explore latent spaces?
 
@@ -27,7 +27,7 @@ This project's goal is to develop visual understanding of the entire imagination
 
 #### The project goals
 
-Over the course of next 6 months I will develop a series of prototypical interfaces and data visualisations for developing my understanding of latent spaces. Are traditional cartographical techniques relevant in this statistical space? What is the meaning of a region, a border, distance and direction in Latent space?
+Over the course of next 6 months I will create a series of prototypical interfaces and data visualisations for developing my understanding of latent spaces. Are traditional cartographical techniques relevant in this statistical space? What is the meaning of a region, a border, distance and direction in Latent space?
 
 I draw inspiration from experimental video games, interactive data visualizations and non-linear interactive fiction. This website serves as a journal for documenting this journey.
 
