@@ -1,5 +1,8 @@
 .DS_STORE
 *.ttf
-/web_assets
+*.woff
+*.woff2
+*.eot
+web_assets/
 public/
 *.mp4
