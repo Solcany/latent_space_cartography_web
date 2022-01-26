@@ -82,7 +82,7 @@ h2 {
 h3 {
     @include headline_font;
     letter-spacing: 0px;
-    font-size: $f3;
+    font-size: $f2;
 }
 
 h4 {
@@ -145,8 +145,8 @@ body {
     background-color: $bronze;
 
     @media #{$breakpoint-not-small} {
-        height: 100vh;
-        overflow-y: hidden;
+        //height: 100vh;
+        //overflow-y: hidden;
     }
 
     header {
@@ -182,7 +182,7 @@ body {
 
         section#introduction {
                 width: 100%;
-                border-bottom: $border-width solid $border-color;
+                //border-bottom: $border-width solid $border-color;
                 padding-right: $content-padding-right;
                 padding-left: $content-padding-left;
                 background-color: $bronze;
@@ -197,7 +197,7 @@ body {
                     box-sizing: border-box;
                     padding-right: $content-padding-right;
                     @media #{$breakpoint-not-small} {
-                        width: 100%;
+                        width: 65%;
                         padding-right: 200px
                     }  
 
@@ -256,40 +256,36 @@ body {
                 }
             }
 
-        div.columns { 
-            display: flex;
-            flex: 1;
-            min-height: 0;
-            width: 100%;
-            flex-wrap: wrap;
-            @media #{$breakpoint-not-small} {
-                flex-wrap: nowrap;
-            }
 
-            section.column {
-                display: inline-block;
-                height: 100%;
-                box-sizing: border-box;
-                width: 100%;
+            section#activity {
 
-                @media #{$breakpoint-not-small} {
-                    width: 50%;
-                }
+                // @media #{$breakpoint-not-small} {
+                //     width: 50%;
+                // }
+
+                background-color: $almostblack;
+                //border-top: $border-width solid $border-color;
+                
+                // @media #{$breakpoint-not-small} {
+                //     border-left: $border-width solid $border-color;
+                //     border-top: none;
+                // }
+
 
                 h3 {               
                     //background-color: #C0C1B8;
                     text-align: #{$headlines-alignment};
                     padding-left: $content-padding-left;
-                    padding-top: $offset3;
+                    padding-top: $offset4;
                     padding-bottom: $offset3;
-                    border-bottom: $border-width solid $border-color; 
+                    // border-bottom: $border-width solid $border-color; 
                     @media #{$breakpoint-not-small} {
                         padding-left: $content-padding-left-ns;
                     }                                   
                 }
 
                 div.wrapper {
-                    width: 100%;
+                    width: 40%;
                     height: 100%;
                     display: block;
                     overflow-y: auto;
@@ -302,69 +298,60 @@ body {
                     }                      
                 }  
 
-                &#project {
-                    background-color: $darkbronze;
-                    @media #{$breakpoint-not-small} {
-                        background-color: $bronze;
-                    }      
-                    div.wrapper {
+                // &#project {
+                //     background-color: $darkbronze;
+                //     @media #{$breakpoint-not-small} {
+                //         background-color: $bronze;
+                //     }      
+                //     div.wrapper {
 
-                        img {
-                            padding-bottom: $offset3;
-                        }
+                //         img {
+                //             padding-bottom: $offset3;
+                //         }
 
-                        h4 {
-                            padding-left: $content-padding-left;
-                            padding-bottom: $offset3;                        
-                            padding-top: $offset4;
-                            @media #{$breakpoint-not-small} {
-                                padding-left: $content-padding-left-ns;
-                            }                     
-                        }
+                //         h4 {
+                //             padding-left: $content-padding-left;
+                //             padding-bottom: $offset3;                        
+                //             padding-top: $offset4;
+                //             @media #{$breakpoint-not-small} {
+                //                 padding-left: $content-padding-left-ns;
+                //             }                     
+                //         }
 
-                        h4:first-of-type {
-                            padding-top: 0;
-                        }                    
-                        p {
-                            padding-left: $content-padding-left;
-                            padding-right: $content-padding-right;
-                            padding-bottom: $offset3;                        
-                            @media #{$breakpoint-not-small} {
-                                padding-left: $content-padding-left-ns;
-                                padding-right: $content-padding-right-ns;
-                            }                           
-                        }   
-                        strong {
-                            display: inline-block;
-                            padding-top: $offset3;
-                            padding-bottom: $offset2;
-                            @media #{$breakpoint-not-small} {
-                                padding-top: $offset4;
-                                padding-bottom: $offset3;
-                            }                          
-                        }
+                //         h4:first-of-type {
+                //             padding-top: 0;
+                //         }                    
+                //         p {
+                //             padding-left: $content-padding-left;
+                //             padding-right: $content-padding-right;
+                //             padding-bottom: $offset3;                        
+                //             @media #{$breakpoint-not-small} {
+                //                 padding-left: $content-padding-left-ns;
+                //                 padding-right: $content-padding-right-ns;
+                //             }                           
+                //         }   
+                //         strong {
+                //             display: inline-block;
+                //             padding-top: $offset3;
+                //             padding-bottom: $offset2;
+                //             @media #{$breakpoint-not-small} {
+                //                 padding-top: $offset4;
+                //                 padding-bottom: $offset3;
+                //             }                          
+                //         }
 
-                        a#sci_link {
-                            display: block;
-                            padding-left: $content-padding-left;
-                            @media #{$breakpoint-not-small} {
-                                padding-left: $content-padding-left-ns;
-                            }                          
-                            img#sci_logo {
-                                width: 100px;
-                            }                         
-                        }     
-                    }     
-                }
-
-                &#activity {
-                    background-color: $almostblack;
-
-                    border-top: $border-width solid $border-color;
-                    @media #{$breakpoint-not-small} {
-                        border-left: $border-width solid $border-color;
-                        border-top: none;
-                    }
+                //         a#sci_link {
+                //             display: block;
+                //             padding-left: $content-padding-left;
+                //             @media #{$breakpoint-not-small} {
+                //                 padding-left: $content-padding-left-ns;
+                //             }                          
+                //             img#sci_logo {
+                //                 width: 100px;
+                //             }                         
+                //         }     
+                //     }     
+                // }
 
                     ul#activity_log {
                         padding-top: $offset4;
@@ -414,10 +401,8 @@ body {
                             }
                         }
                     }
-                }
             }          
         }
-    }
 
     footer {
         color: $white;

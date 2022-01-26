@@ -6,8 +6,6 @@ slug: landing-page
 headless: true
 ---
 
-{{< video src="video/latent_walker" hpage="/headless_project" alt="a rotating cloud of tiny painted portraits on black background" autoplay="true" muted="true" loop="true" >}}
-
 
 
 #### What is latent space?
@@ -24,6 +22,8 @@ My aim is to create experiences similar to a walk in the garden instead of a too
 
 
 <br>
+
+I’m [Matúš Solčány](https://matussolcany.com) a digital designer and creative coder. Are you interested in the project? Email me at {{< email >}}
 
 This project is made possible with the generous support of [Creative Industries Fund NL](https://stimuleringsfonds.nl/en/).
  
