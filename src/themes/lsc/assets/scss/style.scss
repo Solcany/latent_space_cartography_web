@@ -27,7 +27,7 @@ $black: #000;
 $almostblack: #0A0A0A;
 $white: #fff;
 $bronze: #5b5636; //#585738; //#585738;
-$darkbronze: $bronze;//#4D4C31;
+$darkbronze: #4F4A30; //#4D4C31;
 $lightgray: #9FA196; //# yellowgray 87897E
 $darkgray: #B6B6B6;
 $gray: #303030;
@@ -263,7 +263,7 @@ body {
                 //     width: 50%;
                 // }
 
-                background-color: $almostblack;
+                background-color: $darkbronze;
                 //border-top: $border-width solid $border-color;
                 
                 // @media #{$breakpoint-not-small} {
