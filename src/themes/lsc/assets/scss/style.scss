@@ -4,7 +4,7 @@
 $offset1: 4px;
 $offset2: 8px;
 $offset3: 16px;
-$offset4: 32px;
+$offset4: 42px;
 $offset5: 64px;
 $offset6: 136px;
 $offset7: 180px;
@@ -26,7 +26,7 @@ $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $black: #000;
 $almostblack: #0A0A0A;
 $white: #fff;
-$bronze: #5b5636; //#585738; //#585738;
+$bronze: #585738; // warm bronze: #5b5636;//#585738;
 $darkbronze: $bronze;//#4D4C31;
 $lightgray: #9FA196; //# yellowgray 87897E
 $darkgray: #858585;
@@ -42,8 +42,8 @@ $border-width: 1px;
 $border-color: $darkgray;
 $headlines-alignment: 'left';
 
-$content-padding-left: $offset2;
-$content-padding-right: $offset3;
+$content-padding-left: $offset4;
+$content-padding-right: $offset4;
 $content-padding-left-ns: $offset4;
 $content-padding-right-ns: $offset7;
 
@@ -53,20 +53,20 @@ h1, h2, h3, h4, p, strong, a, span.date {
 
 h1 {
     @include headline_font;
-    font-size: $f3;
-    @media #{$breakpoint-not-small} {
-        font-size: $f2;
-    }    
+    font-size: $f2;
+    // @media #{$breakpoint-not-small} {
+    //     font-size: $f2;
+    // }    
 }
 
 h2 {
     @include headline_font;
-    line-height: 26px;
-    font-size: $f2;
-    @media #{$breakpoint-not-small} {
-        font-size: $f3;
-        line-height: 36px;
-    }     
+    line-height: 36px;
+    font-size: $f3;
+    // @media #{$breakpoint-not-small} {
+    //     font-size: $f3;
+    //     line-height: 36px;
+    // }     
 }
 
 #contact .details p,
@@ -150,10 +150,11 @@ body {
         display: block;
         background-color: $bronze;
         //border-bottom: $border-width solid $border-color; 
-        padding-bottom: $offset4;
+        padding-bottom: $offset3;
         padding-top: $offset3;
         text-align: center;
         @media #{$breakpoint-not-small} {
+            padding-bottom: $offset3;
             text-align: left;
         }
 
@@ -194,7 +195,7 @@ body {
                     box-sizing: border-box;
                     padding-right: $content-padding-right;
                     @media #{$breakpoint-not-small} {
-                        width: 75%;
+                        width: 90%;
                         padding-right: 200px
                     }  
 
@@ -279,8 +280,9 @@ body {
                     padding-left: $content-padding-left;
                     padding-top: $offset3;
                     padding-bottom: $offset3;
-                    border-bottom: $border-width solid $border-color; 
+                    border-bottom: none;
                     @media #{$breakpoint-not-small} {
+                        border-bottom: $border-width solid $border-color; 
                         padding-left: $content-padding-left-ns;
                     }                                   
                 }
@@ -306,7 +308,7 @@ body {
                     }      
                     div.wrapper {
 
-                        img {
+                        img, video {
                             padding-bottom: $offset3;
                         }
 
@@ -396,8 +398,9 @@ body {
 
                                 span.date {
                                     display: block;
+                                    color: $lightgray;
                                     @include text_font;
-                                    font-size: $f7;
+                                    font-size: $f5;
                                     padding-bottom: $offset3;
                                 }
 

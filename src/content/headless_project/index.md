@@ -5,6 +5,7 @@ kind: home
 slug: landing-page
 headless: true
 ---
+{{< imghp src="image/test.png" hpage="/headless_project" alt="a rotating cloud of tiny painted portraits on black background" caption="A dataset generated with Processing">}}
 
 {{< video src="video/latent_walker" hpage="/headless_project" alt="a rotating cloud of tiny painted portraits on black background" autoplay="true" muted="true" loop="true" >}}
 
