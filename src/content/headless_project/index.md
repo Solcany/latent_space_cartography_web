@@ -6,7 +6,9 @@ slug: landing-page
 headless: true
 ---
 
-{{<imghp hpage="/headless_project" src="image/lsc_map.jpg" alt="b">}}
+{{< video src="video/latent_walker" hpage="/headless_project" alt="a rotating cloud of tiny painted portraits on black background" autoplay="true" muted="true" loop="true" >}}
+
+
 
 #### What is latent space?
 

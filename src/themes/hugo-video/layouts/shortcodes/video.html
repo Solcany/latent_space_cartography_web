@@ -19,11 +19,17 @@
 {{- $filenotfound := true -}}
 {{- $unsupportedfile := true -}}
 
+{{- $video_files := 0 }}
+{{- $poster := 0 }}
+
 {{- /* Find all files with filename (without suffix) matching "src" parameter. */ -}}
 {{- $video_files := (.Page.Resources.Match (printf "%s*" $video_src)) -}}
-
 {{- /* Find first image file with filename (without suffix) matching "src" parameter. */ -}}
 {{- $poster := ((.Page.Resources.ByType "image").GetMatch (printf "%s*" $video_src)) -}}
+
+{{ if (.Get "hpage") }}
+  {{- $video_files := (.Site.GetPage (.Get "hpage")).Resources.Match (printf "%s*" $video_src) -}}
+{{ end }}
 
 {{- /* Find in page bundle all valid video files with matching name. */ -}}
 {{- with $video_files -}}
@@ -51,7 +57,7 @@
   {{- errorf "No valid video file with filename %q found." $video_src -}}
 {{- else -}}
 
-<video  controls width="100%" loop {{ if eq (.Get "muted") "true" }} muted {{ end }} {{ with $poster }} poster="{{ .RelPermalink }}" {{ end }} class="html-video fadein" src="{{ $video_mp4.RelPermalink }}" src="{{ $video_mp4.RelPermalink }}" preload="metadata">
+<video {{ if (.Get "controls") }} controls {{ end }} width="100%" {{ if eq (.Get "loop") "true"}} loop {{ end }} {{ if eq (.Get "muted") "true" }} muted {{ end }} {{ with $poster }} poster="{{ .RelPermalink }}" {{ end }} class="html-video fadein" src="{{ $video_mp4.RelPermalink }}" {{ if eq (.Get "autoplay") "true" }} autoplay {{ end }} preload="metadata">
 
   {{- with $video_webm }}
     <source src="{{ .RelPermalink }}" data-src="{{ .RelPermalink }}" type="video/webm">

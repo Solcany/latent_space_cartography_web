@@ -26,8 +26,8 @@ $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $black: #000;
 $almostblack: #0A0A0A;
 $white: #fff;
-$bronze: #585738; //#585738;
-$darkbronze: #4D4C31;
+$bronze: #5b5636; //#585738; //#585738;
+$darkbronze: $bronze;//#4D4C31;
 $lightgray: #9FA196; //# yellowgray 87897E
 $darkgray: #B6B6B6;
 $gray: #303030;
@@ -192,11 +192,12 @@ body {
                 }  
 
                 div.content {
-                    width: 100%;
+                    width: 90%;
                     display: block;
                     box-sizing: border-box;
                     padding-right: $content-padding-right;
                     @media #{$breakpoint-not-small} {
+                        width: 100%;
                         padding-right: 200px
                     }  
 
