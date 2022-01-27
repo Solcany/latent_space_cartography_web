@@ -28,7 +28,7 @@ $almostblack: #0A0A0A;
 $white: #fff;
 $bronze: #585738; // warm bronze: #5b5636;//#585738;
 $darkbronze: $bronze;//#4D4C31;
-$lightgray: #9FA196; //# yellowgray 87897E
+$lightgray: #999999; //# yellowgray 87897E
 $darkgray: #858585;
 $gray: #303030;
 $green: #A7F650;
@@ -42,7 +42,7 @@ $border-width: 1px;
 $border-color: $darkgray;
 $headlines-alignment: 'left';
 
-$content-padding-left: $offset4;
+$content-padding-left: $offset3;
 $content-padding-right: $offset4;
 $content-padding-left-ns: $offset4;
 $content-padding-right-ns: $offset7;
@@ -190,7 +190,7 @@ body {
                 }  
 
                 div.content {
-                    width: 90%;
+                    width: 100%;
                     display: block;
                     box-sizing: border-box;
                     padding-right: $content-padding-right;
@@ -269,19 +269,18 @@ body {
                 height: 100%;
                 box-sizing: border-box;
                 width: 100%;
-
                 @media #{$breakpoint-not-small} {
                     width: 50%;
                 }
-
                 h3 {               
-                    //background-color: #C0C1B8;
                     text-align: #{$headlines-alignment};
                     padding-left: $content-padding-left;
-                    padding-top: $offset3;
-                    padding-bottom: $offset3;
+                    padding-top: 31px;
+                    padding-bottom: 31px;                   
                     border-bottom: none;
                     @media #{$breakpoint-not-small} {
+                        padding-top: $offset3;
+                        padding-bottom: $offset3;
                         border-bottom: $border-width solid $border-color; 
                         padding-left: $content-padding-left-ns;
                     }                                   
@@ -361,12 +360,15 @@ body {
 
                     border-top: $border-width solid $border-color;
                     @media #{$breakpoint-not-small} {
-                        //border-left: $border-width solid $border-color;
                         border-top: none;
                     }
 
                     ul#activity_log {
-                        padding-top: $offset4;
+                        padding-top: $offset3;
+                        @media #{$breakpoint-not-small} {
+                            padding-top: $offset4;
+                        }
+                        padding-bottom: $offset5;                        
                         width: 100%;
 
                         li:first-child {
@@ -404,12 +406,19 @@ body {
                                     padding-bottom: $offset3;
                                 }
 
-                                figure,video, h4, p {
+                                figure, h4, p {
                                     padding-bottom: $offset3;
 
                                    &:last-child {
                                         padding-bottom: 0;
                                     }                                    
+                                }
+                                figcaption {
+                                    display: block;
+                                    color: $lightgray;
+                                    @include text_font;
+                                    font-size: $f5;  
+                                    padding-top: $offset1;                                  
                                 }
                             }
                         }

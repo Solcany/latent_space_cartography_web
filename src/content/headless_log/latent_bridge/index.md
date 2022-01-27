@@ -1,7 +1,7 @@
 ---
 title: "Latent_bridge"
 date: 2022-01-26T19:22:52+01:00
-draft: false
+draft: true
 ---
 
 {{< img src="media/vae_train.jpg" alt="a rotating cloud of tiny painted portraits on black background" caption="A dataset generated with Processing">}}

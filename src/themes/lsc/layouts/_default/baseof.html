@@ -31,8 +31,7 @@
 	{{/* - partial "footer" . - */}}
 	<script>
 		// lazy load videos in activity container
-		var container = document.getElementById("activity");
-		var videos = container.getElementsByTagName('video');
+		var videos = document.getElementsByTagName('video');
 		for(let i = 0; i < videos.length; i++) {
 			videos[i].removeAttribute("src");
 			videos[i].removeAttribute("controls");
@@ -46,7 +45,6 @@
 			// }, false);
 		}
 		var lazyLoadInstance = new LazyLoad({
-			container: container,
 			elements_selector: "video"
 		});	
 	</script>
