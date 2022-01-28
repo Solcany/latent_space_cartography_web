@@ -9,6 +9,10 @@ $offset5: 64px;
 $offset6: 136px;
 $offset7: 180px;
 
+// offset exceptions
+$header_h1_offset: 34px;
+$column_h3_mobile_offset: 31px;
+
 // $f0: 4.0rem;
 // $f1: 2.8rem;
 // $f2: 2.0rem;
@@ -20,19 +24,13 @@ $f6: 16px;
 $f7: 14px;
 
 $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
-// $breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
-// $breakpoint-large: 'screen and (min-width: 60em)' !default;
-// $breakpoint-verylarge: 'screen and (min-width: 100em)' !default;
 $black: #000;
 $almostblack: #0A0A0A;
 $white: #fff;
-$bronze: #585738; // warm bronze: #5b5636;//#585738;
-$darkbronze: $bronze;//#4D4C31;
-$lightgray: #999999; //# yellowgray 87897E
+$bronze: #585738; 
+$lightgray: #999999;
 $darkgray: #858585;
 $gray: #303030;
-$green: #A7F650;
-$yellow: #FFF561;
 
 $scrollbar-track-color: $gray;
 $scrollbar-thumb-color: #9E9E98;
@@ -53,20 +51,13 @@ h1, h2, h3, h4, p, strong, a, span.date {
 
 h1 {
     @include headline_font;
-    font-size: $f2;
-    // @media #{$breakpoint-not-small} {
-    //     font-size: $f2;
-    // }    
+    font-size: $f2;   
 }
 
 h2 {
     @include headline_font;
     line-height: 36px;
-    font-size: $f3;
-    // @media #{$breakpoint-not-small} {
-    //     font-size: $f3;
-    //     line-height: 36px;
-    // }     
+    font-size: $f3; 
 }
 
 #contact .details p,
@@ -150,11 +141,11 @@ body {
         display: block;
         background-color: $bronze;
         //border-bottom: $border-width solid $border-color; 
-        padding-bottom: $offset3;
+        padding-bottom: $header_h1_offset;
         padding-top: $offset3;
         text-align: center;
         @media #{$breakpoint-not-small} {
-            padding-bottom: $offset3;
+            padding-bottom: $header_h1_offset;
             text-align: left;
         }
 
@@ -275,7 +266,7 @@ body {
                 h3 {               
                     text-align: #{$headlines-alignment};
                     padding-left: $content-padding-left;
-                    padding-top: 31px;
+                    padding-top: $column_h3_mobile_offset;
                     padding-bottom: 31px;                   
                     border-bottom: none;
                     @media #{$breakpoint-not-small} {
@@ -301,10 +292,8 @@ body {
                 }  
 
                 &#project {
-                    background-color: $darkbronze;
-                    @media #{$breakpoint-not-small} {
-                        background-color: $bronze;
-                    }      
+                    background-color: $bronze;
+
                     div.wrapper {
 
                         img, video {

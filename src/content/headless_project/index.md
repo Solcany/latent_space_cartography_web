@@ -5,7 +5,7 @@ kind: home
 slug: landing-page
 headless: true
 ---
-{{< imghp src="image/lsc_map.jpg" hpage="/headless_project" alt="a rotating cloud of tiny painted portraits on black background">}}
+{{< imghp src="image/lsc_map.jpg" hpage="/headless_project" alt="a cloud of tiny generated photorealistic portraits connected with green lines on black background">}}
 
 #### What is latent space?
 

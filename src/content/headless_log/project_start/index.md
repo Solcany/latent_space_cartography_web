@@ -6,4 +6,4 @@ draft: false
 
 {{< img src="media/lsc_map.jpg" alt="a cloud of tiny generated photorealistic portraits connected with green lines on black background">}}
 
-The project starts today. I created the image above with Ml4a implementation of Stylegan2.
+The project starts today. In the beginning I plan to create basic prototypes to visualize large samples from pretrained generative networks.
