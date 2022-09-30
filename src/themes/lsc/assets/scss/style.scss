@@ -166,7 +166,7 @@ body {
 
         section#introduction {
                 width: 100%;
-                border-bottom: $border-width solid $border-color;
+                //border-bottom: $border-width solid $border-color;
                 padding-right: $content-padding-right;
                 padding-left: $content-padding-left;
                 background-color: $bronze-2;
@@ -259,11 +259,11 @@ body {
                     padding-left: $content-padding-left;
                     padding-top: $column_h3_mobile_offset;
                     padding-bottom: 31px;                   
-                    border-bottom: none;
+                    //border-bottom: none;
                     @media #{$breakpoint-not-small} {
                         padding-top: $offset3;
                         padding-bottom: $offset3;
-                        border-bottom: $border-width solid $border-color; 
+                        //border-bottom: $border-width solid $border-color; 
                         padding-left: $content-padding-left-ns;
                     }                                   
                 }     
@@ -377,7 +377,7 @@ body {
                 &#activity {
                     background-color: $bronze-0;
 
-                    border-top: $border-width solid $border-color;
+                    // border-top: $border-width solid $border-color;
                     @media #{$breakpoint-not-small} {
                         border-top: none;
                     }
@@ -450,7 +450,7 @@ body {
     footer {
         color: $white;
         background-color: $black;
-        border-top: $border-width solid $white;
+        // border-top: $border-width solid $white;
         padding-top: $offset1;
         padding-bottom: $offset2;
         padding-left: $content-padding-left;
