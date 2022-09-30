@@ -5,26 +5,25 @@
              {{- with .Site.GetPage "/headless_introduction" -}}
               {{- .Content -}}
              {{- end -}}
-            <div id="contact">
-              <a id="hide" href="#hide" class="hide">Contact<span class="caret">^</span></a>
-              <a id="show" href="#show" class="show">Contact<span class="caret">^</span></a>
-              <div class="details">
-               {{- with .Site.GetPage "/headless_contact" -}}
-                {{- .Content -}}
-               {{- end -}}
-              </div>
-            </div>
         </div>
        </section>
        <div class="columns">
-         <section id="project" class="column">
+         <section id="about" class="column">
          		<h3> The Project </h3>
+
+            <a id="hide" href="#hide" class="hide">More<span class="caret">^</span></a>
+            <a id="show" href="#show" class="show">Less<span class="caret">^</span></a>
+
          		<div class="wrapper">
       				{{- with .Site.GetPage "/headless_project" -}}
       					{{- .Content -}}
       				{{- end -}}    
       				{{- $sci_logo := resources.Get "image/sci_logo_white.gif" -}}
-      				<a id="sci_link" href="https://stimuleringsfonds.nl/en/"><img id="sci_logo" src="{{ $sci_logo.RelPermalink}}"></a>
+      				<a id="sci_link" href="https://stimuleringsfonds.nl/en/"><img id="sci_logo" src="{{ $sci_logo.RelPermalink}}">
+               {{- with .Site.GetPage "/headless_contact" -}}
+                {{- .Content -}}
+               {{- end -}}
+              </a>
     			</div>
          </section>
          <section id="activity" class="column">
