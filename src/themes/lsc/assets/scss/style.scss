@@ -27,7 +27,12 @@ $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $black: #000;
 $almostblack: #0A0A0A;
 $white: #fff;
-$bronze: #585738; 
+
+$bronze-2: #5B5636; 
+$bronze-1: #4F4A30; 
+$bronze-0: #464229; 
+
+
 $lightgray: #999999;
 $darkgray: #858585;
 $gray: #303030;
@@ -129,12 +134,12 @@ body {
     flex-direction: column;
     height: auto;
     overflow-y: scroll;
-    background-color: $bronze;
+    background-color: $bronze-2;
 
     header {
         width: 100%;
         display: block;
-        background-color: $bronze;
+        background-color: $bronze-2;
         padding-bottom: $header_h1_offset;
         padding-top: $offset3;
         text-align: center;
@@ -164,7 +169,7 @@ body {
                 border-bottom: $border-width solid $border-color;
                 padding-right: $content-padding-right;
                 padding-left: $content-padding-left;
-                background-color: $bronze;
+                background-color: $bronze-2;
 
                 @media #{$breakpoint-not-small} {
                     // padding-left: $content-padding-left-ns;
@@ -278,7 +283,7 @@ body {
                 }  
 
                 &#about {
-                    background-color: $bronze;
+                    background-color: $bronze-1;
 
                     a {
                         position: relative;
@@ -370,7 +375,7 @@ body {
                 }
 
                 &#activity {
-                    background-color: $almostblack;
+                    background-color: $bronze-0;
 
                     border-top: $border-width solid $border-color;
                     @media #{$breakpoint-not-small} {
