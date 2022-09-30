@@ -15,7 +15,7 @@ $column_h3_mobile_offset: 31px;
 
 
 // content width
-$not-small-content-width: 60%;
+$not-small-content-width: 45%;
 
 // $f0: 4.0rem;
 // $f1: 2.8rem;
@@ -60,13 +60,13 @@ h1, h2, h3, h4, p, strong, a, span.date {
 
 h1 {
     @include headline_font;
-    font-size: $f2;   
+    font-size: $f3;   
 }
 
 h2 {
     @include text_font;
     //line-height: 36px;
-    font-size: $f5; 
+    font-size: $f6; 
 }
 
 #contact .details p,
@@ -78,7 +78,7 @@ h2 {
 h3 {
     @include headline_font;
     letter-spacing: 0px;
-    font-size: $f3;
+    font-size: $f4;
 }
 
 h4 {
@@ -178,15 +178,15 @@ body {
 
                     h3 {               
                         text-align: #{$headlines-alignment};
-                        padding-left: $content-padding-left;
-                        padding-top: $column_h3_mobile_offset;
-                        padding-bottom: 31px;                   
+                        // padding-left: $content-padding-left;
+                       // padding-top: $column_h3_mobile_offset;
+                        ///padding-bottom: 31px;                   
                         //border-bottom: none;
                         @media #{$breakpoint-not-small} {
-                            padding-top: $offset3;
-                            padding-bottom: $offset3;
+                            //padding-top: $offset3;
+                            //padding-bottom: $offset3;
                             //border-bottom: $border-width solid $border-color; 
-                            padding-left: $content-padding-left-ns;
+                            //padding-left: $content-padding-left-ns;
                         }                                   
                     }     
 
@@ -206,24 +206,10 @@ body {
                 }
 
                 &#introduction {
-                    width: 100%;
-                    padding-right: $content-padding-right;
-                    padding-left: $content-padding-left;
                     background-color: $bronze-2;
 
                     div.content {
-                        width: 100%;
-                        display: block;
-                        box-sizing: border-box;
-                        padding-right: $content-padding-right;
-                        @media #{$breakpoint-not-small} {
-                            // width: 90%;
-                            // padding-right: 200px
-                        }  
 
-                        h2 {
-                            padding-bottom: $offset3;
-                        }
 
                     }
                 }
@@ -347,16 +333,16 @@ body {
                         li {
                             width: 100%;
                             display: block;                        
-                            padding-left: $content-padding-left;
-                            padding-right: $content-padding-right;
+                            //padding-left: $content-padding-left;
+                            //padding-right: $content-padding-right;
                             padding-top: $offset3;
-                            padding-bottom: $offset4;
+                            //padding-bottom: $offset4;
                             box-sizing: border-box;
                             @media #{$breakpoint-not-small} {
-                                padding-left: $content-padding-left-ns;
-                                padding-right: $content-padding-right-ns;
+                                //padding-left: $content-padding-left-ns;
+                                //padding-right: $content-padding-right-ns;
                                 padding-top: $offset4;
-                                padding-bottom: $offset5;                            
+                                //padding-bottom: $offset5;                            
                             }     
 
                             div.content {
