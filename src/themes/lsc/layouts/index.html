@@ -1,14 +1,14 @@
 {{- define "main" -}}
     <main aria-role="main" id="home">
-       <section id="introduction">
+       <section id="introduction" aria-label="introduction">
            <div class="content">
              {{- with .Site.GetPage "/headless_introduction" -}}
               {{- .Content -}}
              {{- end -}}
-        </div>
+            </div>
        </section>
-       <div class="columns">
-         <section id="about" class="column">
+       <section id="about" aria-label="about project">
+          <div class="content">        
          		<h3> The Project </h3>
 
             <a id="hide" href="#hide" class="hide">More<span class="caret">^</span></a>
@@ -24,12 +24,14 @@
                 {{- .Content -}}
                {{- end -}}
               </a>
-    			</div>
-         </section>
-         <section id="activity" class="column">
-              {{- partial "activity_log" . -}}
-         </section>
-      </div>
+    			   </div>
+          </div>
+       </section>
+       <section id="activity" aria-label="project activity">
+          <div class="content">
+            {{- partial "activity_log" . -}}
+          </div>
+       </section>
     </main>
 {{- end -}}
  

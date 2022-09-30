@@ -13,6 +13,10 @@ $offset7: 180px;
 $header_h1_offset: 34px;
 $column_h3_mobile_offset: 31px;
 
+
+// content width
+$not-small-content-width: 60%;
+
 // $f0: 4.0rem;
 // $f1: 2.8rem;
 // $f2: 2.0rem;
@@ -61,8 +65,8 @@ h1 {
 
 h2 {
     @include text_font;
-    line-height: 36px;
-    font-size: $f3; 
+    //line-height: 36px;
+    font-size: $f5; 
 }
 
 #contact .details p,
@@ -85,7 +89,7 @@ h4 {
 p, footer {
     @include text_font;
     line-height: 24px;
-    font-size: $f5;
+    font-size: $f6;
 }
 
 a {
@@ -138,149 +142,91 @@ body {
 
     header {
         width: 100%;
-        display: block;
+        display: flex;
+        justify-content: center;
         background-color: $bronze-2;
         padding-bottom: $header_h1_offset;
         padding-top: $offset3;
         text-align: center;
+        width: 100%;
         @media #{$breakpoint-not-small} {
             padding-bottom: $header_h1_offset;
             text-align: left;
         }
 
-        h1 {
-            text-align: left;
-            padding-left: $content-padding-left;
-            @media #{$breakpoint-not-small} {
-                text-align: left;
-                padding-left: $content-padding-left-ns; 
-
-            }            
+        .content {
+            width: $not-small-content-width;
+            h1 {
+                text-align: left;        
+            }
         }
     }
-
 
     main#home {
         height: 100%;
         width: 100%;
 
-        section#introduction {
-                width: 100%;
-                //border-bottom: $border-width solid $border-color;
-                padding-right: $content-padding-right;
-                padding-left: $content-padding-left;
-                background-color: $bronze-2;
-
-                @media #{$breakpoint-not-small} {
-                    // padding-left: $content-padding-left-ns;
-                    // padding-right: $offset6;
-                }  
-
-                div.content {
-                    width: 100%;
-                    display: block;
-                    box-sizing: border-box;
-                    padding-right: $content-padding-right;
-                    @media #{$breakpoint-not-small} {
-                        // width: 90%;
-                        // padding-right: 200px
-                    }  
-
-                    h2 {
-                        padding-bottom: $offset3;
-                    }
-
-                    div#contact {
-                        padding-bottom: $offset4;
-                        @media #{$breakpoint-not-small} {
-                            padding-bottom: $offset3;
-                        }
-                        a {
-                            position: relative;
-                        }
-
-                        a .caret {
-                            position: absolute;
-                            right: -15px;
-                            bottom: 0;
-                            display: inline-block;
-                        } 
-
-                        a#show, a#hide {
-                            position: relative;
-                            @include text_font;
-
-                        }
-                        .details,
-                        a#show,
-                        a#hide:target {
-                          display: none;
-                        }
-
-                        a#hide:target + a#show {
-                            display: inline-block;
-
-                            .caret {
-                                bottom: -5px;
-                            }
-                        }
-
-                        a#hide:target ~ .details {
-                          display: block;
-                        }
-
-                        a#hide .caret {
-                            transform: rotate(180deg);
-                            bottom: 1px;
-                        }
-
-                        .details {
-                            padding-top: $offset3;
-                        }
-                    }
-                }
-            }
-
-        div.columns { 
-            display: flex;
-            flex: 1;
-            min-height: 0;
-            width: 100%;
-            flex-wrap: wrap;
-
-            section.column {
-                display: inline-block;
+            section {
+                display: flex;
+                justify-content: center;
                 height: 100%;
                 box-sizing: border-box;
                 width: 100%;
 
-                h3 {               
-                    text-align: #{$headlines-alignment};
-                    padding-left: $content-padding-left;
-                    padding-top: $column_h3_mobile_offset;
-                    padding-bottom: 31px;                   
-                    //border-bottom: none;
-                    @media #{$breakpoint-not-small} {
-                        padding-top: $offset3;
-                        padding-bottom: $offset3;
-                        //border-bottom: $border-width solid $border-color; 
-                        padding-left: $content-padding-left-ns;
-                    }                                   
-                }     
+                .content {
+                    width: $not-small-content-width;
 
-                div.wrapper {
-                    display: block;
+                    h3 {               
+                        text-align: #{$headlines-alignment};
+                        padding-left: $content-padding-left;
+                        padding-top: $column_h3_mobile_offset;
+                        padding-bottom: 31px;                   
+                        //border-bottom: none;
+                        @media #{$breakpoint-not-small} {
+                            padding-top: $offset3;
+                            padding-bottom: $offset3;
+                            //border-bottom: $border-width solid $border-color; 
+                            padding-left: $content-padding-left-ns;
+                        }                                   
+                    }     
+
+                    div.wrapper {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        overflow-y: auto;
+                        scrollbar-width: thin;
+                        scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+                        box-sizing: border-box;
+                        padding-bottom: $offset3;
+                        @media #{$breakpoint-not-small} {
+                            padding-bottom: $offset6;                        
+                        }                      
+                    }
+                }
+
+                &#introduction {
                     width: 100%;
-                    height: 100%;
-                    overflow-y: auto;
-                    scrollbar-width: thin;
-                    scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
-                    box-sizing: border-box;
-                    padding-bottom: $offset3;
-                    @media #{$breakpoint-not-small} {
-                        padding-bottom: $offset6;                        
-                    }                      
-                }  
+                    padding-right: $content-padding-right;
+                    padding-left: $content-padding-left;
+                    background-color: $bronze-2;
+
+                    div.content {
+                        width: 100%;
+                        display: block;
+                        box-sizing: border-box;
+                        padding-right: $content-padding-right;
+                        @media #{$breakpoint-not-small} {
+                            // width: 90%;
+                            // padding-right: 200px
+                        }  
+
+                        h2 {
+                            padding-bottom: $offset3;
+                        }
+
+                    }
+                }
 
                 &#about {
                     background-color: $bronze-1;
@@ -360,19 +306,19 @@ body {
                                 padding-bottom: $offset3;
                             }                          
                         }
+                    }
 
-                        a#sci_link {
-                            display: block;
-                            padding-left: $content-padding-left;
-                            @media #{$breakpoint-not-small} {
-                                padding-left: $content-padding-left-ns;
-                            }                          
-                            img#sci_logo {
-                                width: 100px;
-                            }                         
-                        }     
+                    a#sci_link {
+                        display: block;
+                        padding-left: $content-padding-left;
+                        @media #{$breakpoint-not-small} {
+                            padding-left: $content-padding-left-ns;
+                        }                          
+                        img#sci_logo {
+                            width: 100px;
+                        }                         
                     }     
-                }
+                }     
 
                 &#activity {
                     background-color: $bronze-0;
@@ -444,7 +390,6 @@ body {
                     }
                 }
             }          
-        }
     }
 
     footer {
