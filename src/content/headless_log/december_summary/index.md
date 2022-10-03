@@ -4,7 +4,7 @@ date: 2022-01-18T13:47:31+01:00
 draft: false
 ---
 
-{{< video src="media/latent_walker" alt="first person view of a field of cubes and images of game maps" autoplay="true" muted="true" loop="true" controls="false" >}}
+{{< video src="media/latent_walker" alt="first person view of a field of cubes and images of game maps" autoplay="true" muted="true" loop="true" controls="true" >}}
 
 #### First person exploration
 
