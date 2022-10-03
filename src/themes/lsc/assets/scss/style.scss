@@ -9,17 +9,10 @@ $offset5: 64px;
 $offset6: 136px;
 $offset7: 180px;
 
-// offset exceptions
-$header_h1_offset: 34px;
-$column_h3_mobile_offset: 31px;
-
-
 // content width
 $content-width: 100%;
-$not-small-content-width: 45%;
+$not-small-content-width: 40%;
 
-
-// $f2: 35px;
 $f3: 28px;
 $f4: 23px;
 $f5: 20px;
@@ -27,21 +20,16 @@ $f6: 16px;
 
 $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
 $white: #fff;
-
-$bronze-2: #5B5636; 
+$bronze-2: #5E583B;
 $bronze-1: #4F4A30; 
-$bronze-1-transparent-gradient: linear-gradient(0deg, 
-                                                rgba(79, 74, 48, 1) 15%, 
-                                                rgba(79, 74, 48, 0) 100%);
-$bronze-0: #464229; 
-
+$bronze-1-transparent-gradient: linear-gradient(0deg, rgba(79, 74, 48, 1) 7%, rgba(79, 74, 48, 0) 100%);
+$bronze-0: #403C26; 
 $lightgray: #b5b5b5;
 
 $transition-time: 0.3s;
-$headlines-alignment: 'left';
 
 $content-padding-left: $offset3;
-$content-padding-right: $offset4;
+$content-padding-right: $offset3;
 
 h1, h2, h3, h4, p, strong, a, span.date {
     color: $white;
@@ -55,12 +43,6 @@ h1 {
 h2 {
     @include text_font;
     font-size: $f6; 
-}
-
-#contact .details p,
-#contact .details a {
-    @include text_font;
-    font-size: $f5;   
 }
 
 h3 {
@@ -134,17 +116,10 @@ body {
                 padding-right: 0;   
                 padding-bottom: $offset3;                  
             }        
-
-            h1 {
-                text-align: left;        
-            }
         }
     }
 
     main#home {
-        height: 100%;
-        width: 100%;
-
             section {
                 display: flex;
                 justify-content: center;
@@ -163,12 +138,10 @@ body {
                       padding-bottom: $offset4;
                       padding-left: 0;
                       padding-right: 0;
-
                       width: $not-small-content-width;
                     }   
 
                     h3 {               
-                        text-align: #{$headlines-alignment};
                         padding-top: $offset3;
                         padding-bottom: $offset3;                   
                         @media #{$breakpoint-not-small} {
@@ -195,7 +168,6 @@ body {
                     position: relative;
 
                     .content {
-
                         a#show, a#hide {
                             padding-top: $offset2;
                             position: relative;
@@ -227,7 +199,7 @@ body {
                         }
 
                         a#hide:target ~ div.wrapper {
-                          height: 80px;
+                          height: 100px;
                           overflow: hidden;
 
                           &:after {
@@ -256,17 +228,16 @@ body {
                         // styles below hide the about section when page is loaded
                         div.wrapper {
                             position: relative;
-                            height: 80px; 
+                            height: 100px;
                             overflow: hidden;  
-
-                           &:after {
-                            content: "";
-                            width: 100%;
-                            position: absolute;
-                            bottom: 0;
-                            height: 100%;
-                            background: $bronze-1-transparent-gradient;
-                          }
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                height: 100%;
+                                background: $bronze-1-transparent-gradient;
+                            }
 
                             img, video {
                                 padding-bottom: $offset3;
@@ -274,23 +245,14 @@ body {
 
                             h4 {
                                 padding-bottom: $offset3;                        
-                                padding-top: $offset4;
-                                @media #{$breakpoint-not-small} {
-                                   // padding-left: $content-padding-left-ns;
-                                }                     
+                                padding-top: $offset4;                   
                             }
 
                             h4:first-of-type {
                                 padding-top: 0;
                             }                    
                             p {
-                                //padding-left: $content-padding-left;
-                                // padding-right: $content-padding-right;
-                                padding-bottom: $offset3;                        
-                                @media #{$breakpoint-not-small} {
-                                    // padding-left: $content-padding-left-ns;
-                                    // padding-right: $content-padding-right-ns;
-                                }                           
+                                padding-bottom: $offset3;                                               
                             }   
                             strong {
                                 display: inline-block;
@@ -304,9 +266,7 @@ body {
 
                             a#sci_link {
                                 display: block;
-                                @media #{$breakpoint-not-small} {
-                                    // padding-left: $content-padding-left-ns;
-                                }                          
+                    
                                 img#sci_logo {
                                     width: 100px;
                                 }                         
@@ -319,7 +279,6 @@ body {
                     background-color: $bronze-0;
 
                     ul#activity_log {
-                        padding-top: $offset2;
                         width: 100%;
 
                         li:first-child {
@@ -342,7 +301,7 @@ body {
 
                                 span.date {
                                     display: block;
-                                   color: $lightgray;
+                                    color: $lightgray;
                                     @include text_font;
                                     font-size: $f6;
                                     padding-bottom: $offset2;
@@ -360,7 +319,6 @@ body {
                                     color: $lightgray;
                                     @include text_font;
                                     font-size: $f6;  
-                                    padding-top: $offset1;                                  
                                 }
                             }
                         }
