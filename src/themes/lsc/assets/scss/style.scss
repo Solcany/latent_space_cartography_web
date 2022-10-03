@@ -18,19 +18,14 @@ $column_h3_mobile_offset: 31px;
 $content-width: 100%;
 $not-small-content-width: 45%;
 
-// $f0: 4.0rem;
-// $f1: 2.8rem;
-// $f2: 2.0rem;
-$f2: 35px;
+
+// $f2: 35px;
 $f3: 28px;
 $f4: 23px;
 $f5: 20px;
 $f6: 16px;
-$f7: 14px;
 
 $breakpoint-not-small: 'screen and (min-width: 64em)' !default;
-$black: #000;
-$almostblack: #0A0A0A;
 $white: #fff;
 
 $bronze-2: #5B5636; 
@@ -40,23 +35,13 @@ $bronze-1-transparent-gradient: linear-gradient(0deg,
                                                 rgba(79, 74, 48, 0) 100%);
 $bronze-0: #464229; 
 
+$lightgray: #b5b5b5;
 
-$lightgray: #999999;
-$darkgray: #858585;
-$gray: #303030;
-
-$scrollbar-track-color: $gray;
-$scrollbar-thumb-color: #9E9E98;
-$scrollbar-thumb-hover-color: #D9D9D9;
 $transition-time: 0.3s;
-$border-width: 1px;
-$border-color: $darkgray;
 $headlines-alignment: 'left';
 
 $content-padding-left: $offset3;
 $content-padding-right: $offset4;
-$content-padding-left-ns: $offset4;
-$content-padding-right-ns: $offset7;
 
 h1, h2, h3, h4, p, strong, a, span.date {
     color: $white;
@@ -123,19 +108,6 @@ html.js .fadein {
         }
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: $scrollbar-track-color;
-}
-::-webkit-scrollbar-thumb {
-  background: $scrollbar-thumb-color;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: $scrollbar-thumb-hover-color;
-} 
-
 body {
     display: flex;
     flex-direction: column;
@@ -148,17 +120,21 @@ body {
         display: flex;
         justify-content: center;
         background-color: $bronze-2;
-        padding-bottom: $header_h1_offset;
-        padding-top: $offset3;
-        text-align: center;
-        width: 100%;
-        @media #{$breakpoint-not-small} {
-            padding-bottom: $header_h1_offset;
-            text-align: left;
-        }
 
         .content {
-            width: $not-small-content-width;
+            width: $content-width;
+            padding-top: $offset3;
+            padding-left: $content-padding-left;
+            padding-right: $content-padding-right; 
+            padding-bottom: $offset3;      
+
+            @media #{$breakpoint-not-small} {
+                width: $not-small-content-width;
+                padding-left: 0;
+                padding-right: 0;   
+                padding-bottom: $offset3;                  
+            }        
+
             h1 {
                 text-align: left;        
             }
@@ -177,16 +153,23 @@ body {
                 width: 100%;
 
                 .content {
-                    width: 100%;
+                    width: $content-width;
                     padding-bottom: $offset2;
+                    padding-left: $content-padding-left;
+                    padding-right: $content-padding-right;
+                    padding-bottom: $offset3;
+
                     @media #{$breakpoint-not-small} {
                       padding-bottom: $offset4;
+                      padding-left: 0;
+                      padding-right: 0;
+
                       width: $not-small-content-width;
                     }   
 
                     h3 {               
                         text-align: #{$headlines-alignment};
-                        padding-top: $offset2;
+                        padding-top: $offset3;
                         padding-bottom: $offset3;                   
                         @media #{$breakpoint-not-small} {
                             padding-top: $offset3;
@@ -199,20 +182,12 @@ body {
                         width: 100%;
                         overflow-y: auto;
                         box-sizing: border-box;
-                        padding-bottom: $offset3;
-                        @media #{$breakpoint-not-small} {
-                        //  padding-bottom: $offset6;                        
-                        }                      
+                        padding-bottom: $offset3;                    
                     }
                 }
 
                 &#introduction {
                     background-color: $bronze-2;
-
-                    div.content {
-
-
-                    }
                 }
 
                 &#about {
@@ -343,17 +318,8 @@ body {
                 &#activity {
                     background-color: $bronze-0;
 
-                    // border-top: $border-width solid $border-color;
-                    @media #{$breakpoint-not-small} {
-                        border-top: none;
-                    }
-
                     ul#activity_log {
-                        padding-top: $offset3;
-                        @media #{$breakpoint-not-small} {
-                            padding-top: $offset4;
-                        }
-                        padding-bottom: $offset5;                        
+                        padding-top: $offset2;
                         width: 100%;
 
                         li:first-child {
@@ -367,15 +333,10 @@ body {
                         li {
                             width: 100%;
                             display: block;                        
-                            padding-left: $content-padding-left;
-                            padding-right: $content-padding-right;
-                            padding-top: $offset2;
-                            box-sizing: border-box;
-                            @media #{$breakpoint-not-small} {
-                                padding-top: $offset3;
-                            }     
+                            padding-top: $offset4;
+                            box-sizing: border-box;    
 
-                            div.content {
+                            div.activity_content {
                                 width: 100%;
                                 box-sizing: border-box;
 
@@ -425,6 +386,8 @@ body {
 
             @media #{$breakpoint-not-small} {
                 width: $not-small-content-width;
+                padding-left: 0;
+                padding-right: 0;                
             }            
         }
 
