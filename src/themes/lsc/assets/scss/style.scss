@@ -15,6 +15,7 @@ $column_h3_mobile_offset: 31px;
 
 
 // content width
+$content-width: 100%;
 $not-small-content-width: 45%;
 
 // $f0: 4.0rem;
@@ -68,7 +69,6 @@ h1 {
 
 h2 {
     @include text_font;
-    //line-height: 36px;
     font-size: $f6; 
 }
 
@@ -86,7 +86,7 @@ h3 {
 
 h4 {
     @include headline_font;
-    font-size: $f5;   
+    font-size: $f6;   
 }
 
 p, footer {
@@ -97,7 +97,7 @@ p, footer {
 
 a {
     @include text_font;
-    font-size: $f5;
+    font-size: $f6;
 }
 
 figure {
@@ -177,10 +177,11 @@ body {
                 width: 100%;
 
                 .content {
-                    width: $not-small-content-width;
+                    width: 100%;
                     padding-bottom: $offset2;
                     @media #{$breakpoint-not-small} {
-                      padding-bottom: $offset4;                        
+                      padding-bottom: $offset4;
+                      width: $not-small-content-width;
                     }   
 
                     h3 {               
@@ -200,7 +201,7 @@ body {
                         box-sizing: border-box;
                         padding-bottom: $offset3;
                         @media #{$breakpoint-not-small} {
-                          padding-bottom: $offset6;                        
+                        //  padding-bottom: $offset6;                        
                         }                      
                     }
                 }
@@ -218,108 +219,124 @@ body {
                     background-color: $bronze-1;
                     position: relative;
 
-                    a#show, a#hide {
-                        padding-top: $offset2;
-                        position: relative;
-                        @include text_font;
-                        font-size: $f6;
-                        position: absolute;
-                        bottom: 15px;
-                        z-index: 99999;
-                    }
+                    .content {
 
-                    a .caret {
-                        position: absolute;
-                        right: -15px;
-                        bottom: 0;
-                        display: inline-block;
-                    } 
-
-                    a#show,
-                    a#hide:target {
-                        display: none;
-                    }
-
-                    a#hide:target + a#show {
-                        display: inline-block;
-
-                        .caret {
-                            bottom: -5px;
-                        }
-                    }
-
-                    a#show:target ~ div.wrapper {
-                      height: 80px;
-                      overflow: hidden;
-
-                      &:after {
-                        content: "";
-                        width: 100%;
-                        position: absolute;
-                        bottom: 0;
-                        height: 100%;
-                        background: $bronze-1-transparent-gradient;
-                      }
-                      //display: none;
-                    }
-
-                    a#hide:target ~ div.wrapper {
-                        height: auto;
-                    }
-
-                    a#hide .caret {
-                        transform: rotate(180deg);
-                        bottom: 1px;
-                    }    
-
-                    div.wrapper {
-                        position: relative;
-
-                        img, video {
-                            padding-bottom: $offset3;
+                        a#show, a#hide {
+                            padding-top: $offset2;
+                            position: relative;
+                            @include text_font;
+                            font-size: $f6;
+                            position: absolute;
+                            bottom: 15px;
+                            z-index: 99999;
                         }
 
-                        h4 {
-                            //padding-left: $content-padding-left;
-                            padding-bottom: $offset3;                        
-                            padding-top: $offset4;
-                            @media #{$breakpoint-not-small} {
-                               // padding-left: $content-padding-left-ns;
-                            }                     
-                        }
-
-                        h4:first-of-type {
-                            padding-top: 0;
-                        }                    
-                        p {
-                            //padding-left: $content-padding-left;
-                            // padding-right: $content-padding-right;
-                            padding-bottom: $offset3;                        
-                            @media #{$breakpoint-not-small} {
-                                // padding-left: $content-padding-left-ns;
-                                // padding-right: $content-padding-right-ns;
-                            }                           
-                        }   
-                        strong {
+                        a .caret {
+                            position: absolute;
+                            right: -15px;
+                            bottom: 0;
                             display: inline-block;
-                            padding-top: $offset3;
-                            padding-bottom: $offset2;
-                            @media #{$breakpoint-not-small} {
-                                padding-top: $offset4;
-                                padding-bottom: $offset3;
-                            }                          
+                        } 
+
+                        a#hide,
+                        a#show:target {
+                            display: none;
                         }
 
-                        a#sci_link {
-                            display: block;
-                            padding-left: $content-padding-left;
-                            @media #{$breakpoint-not-small} {
-                                padding-left: $content-padding-left-ns;
-                            }                          
-                            img#sci_logo {
-                                width: 100px;
-                            }                         
-                        }                           
+                        a#show:target ~ a#hide {
+                            display: inline-block;
+
+                            .caret {
+                                bottom: -5px;
+                            }
+                        }
+
+                        a#hide:target ~ div.wrapper {
+                          height: 80px;
+                          overflow: hidden;
+
+                          &:after {
+                            content: "";
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            height: 100%;
+                            background: $bronze-1-transparent-gradient;
+                          }
+                        }
+
+                        a#show:target ~ div.wrapper {
+                            height: auto;
+                            &:after {
+                                display: none;
+                            }
+                        }
+                 
+                        a#show .caret {
+                            transform: rotate(180deg);
+                            bottom: -3px;
+                        }   
+
+                        // default "state" of the wrapper element when page loads
+                        // styles below hide the about section when page is loaded
+                        div.wrapper {
+                            position: relative;
+                            height: 80px; 
+                            overflow: hidden;  
+
+                           &:after {
+                            content: "";
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            height: 100%;
+                            background: $bronze-1-transparent-gradient;
+                          }
+
+                            img, video {
+                                padding-bottom: $offset3;
+                            }
+
+                            h4 {
+                                padding-bottom: $offset3;                        
+                                padding-top: $offset4;
+                                @media #{$breakpoint-not-small} {
+                                   // padding-left: $content-padding-left-ns;
+                                }                     
+                            }
+
+                            h4:first-of-type {
+                                padding-top: 0;
+                            }                    
+                            p {
+                                //padding-left: $content-padding-left;
+                                // padding-right: $content-padding-right;
+                                padding-bottom: $offset3;                        
+                                @media #{$breakpoint-not-small} {
+                                    // padding-left: $content-padding-left-ns;
+                                    // padding-right: $content-padding-right-ns;
+                                }                           
+                            }   
+                            strong {
+                                display: inline-block;
+                                padding-top: $offset3;
+                                padding-bottom: $offset2;
+                                @media #{$breakpoint-not-small} {
+                                    padding-top: $offset4;
+                                    padding-bottom: $offset3;
+                                }                          
+                            }
+
+                            a#sci_link {
+                                display: block;
+                                @media #{$breakpoint-not-small} {
+                                    // padding-left: $content-padding-left-ns;
+                                }                          
+                                img#sci_logo {
+                                    width: 100px;
+                                }                         
+                            }                           
+                        }
                     }
                 }     
 
@@ -350,16 +367,12 @@ body {
                         li {
                             width: 100%;
                             display: block;                        
-                            //padding-left: $content-padding-left;
-                            //padding-right: $content-padding-right;
-                            padding-top: $offset3;
-                            //padding-bottom: $offset4;
+                            padding-left: $content-padding-left;
+                            padding-right: $content-padding-right;
+                            padding-top: $offset2;
                             box-sizing: border-box;
                             @media #{$breakpoint-not-small} {
-                                //padding-left: $content-padding-left-ns;
-                                //padding-right: $content-padding-right-ns;
-                                padding-top: $offset4;
-                                //padding-bottom: $offset5;                            
+                                padding-top: $offset3;
                             }     
 
                             div.content {
@@ -368,10 +381,10 @@ body {
 
                                 span.date {
                                     display: block;
-                                    color: $lightgray;
+                                   color: $lightgray;
                                     @include text_font;
-                                    font-size: $f5;
-                                    padding-bottom: $offset3;
+                                    font-size: $f6;
+                                    padding-bottom: $offset2;
                                 }
 
                                 figure, h4, p {
@@ -385,7 +398,7 @@ body {
                                     display: block;
                                     color: $lightgray;
                                     @include text_font;
-                                    font-size: $f5;  
+                                    font-size: $f6;  
                                     padding-top: $offset1;                                  
                                 }
                             }
@@ -397,16 +410,22 @@ body {
 
     footer {
         color: $white;
-        background-color: $black;
-        // border-top: $border-width solid $white;
         padding-top: $offset1;
         padding-bottom: $offset2;
-        padding-left: $content-padding-left;
-        text-align: left;
+        background-color: $bronze-0;
+        display: flex;
+        justify-content: center;
 
-        @media #{$breakpoint-not-small} {
-            padding-left: 0;
-            text-align: center;
+        .content {
+            width: $content-width;
+            display: flex;
+            justify-content: space-between;
+            padding-left: $content-padding-left;
+            padding-right: $content-padding-right;
+
+            @media #{$breakpoint-not-small} {
+                width: $not-small-content-width;
+            }            
         }
 
     }

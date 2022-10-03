@@ -11,8 +11,8 @@
           <div class="content">        
          		<h3> About </h3>
 
-            <a id="hide" href="#hide" class="hide">Read more<span class="caret">^</span></a>
-            <a id="show" href="#show" class="show">Read less<span class="caret">^</span></a>             
+            <a id="show" href="#show" class="show">Read more<span class="caret">^</span></a>
+            <a id="hide" href="#hide" class="hide">Read less<span class="caret">^</span></a>             
 
          		<div class="wrapper">
       				{{- with .Site.GetPage "/headless_project" -}}
@@ -20,10 +20,12 @@
       				{{- end -}}    
       				{{- $sci_logo := resources.Get "image/sci_logo_white.gif" -}}
       				<a id="sci_link" href="https://stimuleringsfonds.nl/en/"><img id="sci_logo" src="{{ $sci_logo.RelPermalink}}">
+              </a>
+
+              <h3> Contact </h3>
                {{- with .Site.GetPage "/headless_contact" -}}
                 {{- .Content -}}
                {{- end -}}
-              </a>
     			   </div>
 
           </div>
