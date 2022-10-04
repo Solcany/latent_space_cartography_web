@@ -58,7 +58,7 @@
 {{- else -}}
 
 <figure>
-  <video controls width="100%" {{ if eq (.Get "loop") "true"}} loop {{ end }} {{ if eq (.Get "muted") "true" }} muted {{ end }} {{ with $poster }} poster="{{ .RelPermalink }}" {{ end }} class="html-video fadein" src="{{ $video_mp4.RelPermalink }}" preload="metadata">
+  <video width="100%" controls autoplay {{ if eq (.Get "controls") "true"}} controls {{end}}  {{ if eq (.Get "loop") "true"}} loop {{ end }} {{ if eq (.Get "muted") "true" }} muted {{ end }} {{ with $poster }} poster="{{ .RelPermalink }}" {{ end }} class="html-video fadein" src="{{ $video_mp4.RelPermalink }}" preload="metadata">
 
     {{- with $video_webm }}
       <source src="{{ .RelPermalink }}" data-src="{{ .RelPermalink }}" type="video/webm">

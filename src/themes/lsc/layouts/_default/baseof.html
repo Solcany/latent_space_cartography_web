@@ -28,21 +28,17 @@
 <body>
 	{{- partial "header" . -}}
 	{{- block "main" . -}}{{- end -}}
-	{{/* - partial "footer" . - */}}
+	{{- partial "footer" . -}}
 	<script>
 		// lazy load videos in activity container
 		var videos = document.getElementsByTagName('video');
 		for(let i = 0; i < videos.length; i++) {
 			videos[i].removeAttribute("src");
-			videos[i].removeAttribute("controls");
 			videos[i].setAttribute("autoplay", "");
 			videos[i].setAttribute("playsinline", "");
 			for(let u = 0; u < videos[i].children.length; u++) {
 				videos[i].children[u].removeAttribute("src");
 			}	
-			// videos[i].addEventListener('loadedmetadata', function() {
-		 //    	videos[i].classList.add("meta_loaded");
-			// }, false);
 		}
 		var lazyLoadInstance = new LazyLoad({
 			elements_selector: "video"

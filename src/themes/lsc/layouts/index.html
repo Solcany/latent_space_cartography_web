@@ -1,36 +1,40 @@
 {{- define "main" -}}
     <main aria-role="main" id="home">
-       <section id="introduction">
+       <section id="introduction" aria-label="introduction">
            <div class="content">
              {{- with .Site.GetPage "/headless_introduction" -}}
               {{- .Content -}}
              {{- end -}}
-            <div id="contact">
-              <a id="hide" href="#hide" class="hide">Contact<span class="caret">^</span></a>
-              <a id="show" href="#show" class="show">Contact<span class="caret">^</span></a>
-              <div class="details">
-               {{- with .Site.GetPage "/headless_contact" -}}
-                {{- .Content -}}
-               {{- end -}}
-              </div>
             </div>
-        </div>
        </section>
-       <div class="columns">
-         <section id="project" class="column">
-         		<h3> The Project </h3>
+       <section id="about" aria-label="about project">
+          <div class="content">        
+         		<h3> About </h3>
+
+            <a id="show" href="#show" class="show">Read more<span class="caret">^</span></a>
+            <a id="hide" href="#hide" class="hide">Read less<span class="caret">^</span></a>             
+
          		<div class="wrapper">
       				{{- with .Site.GetPage "/headless_project" -}}
       					{{- .Content -}}
       				{{- end -}}    
       				{{- $sci_logo := resources.Get "image/sci_logo_white.gif" -}}
-      				<a id="sci_link" href="https://stimuleringsfonds.nl/en/"><img id="sci_logo" src="{{ $sci_logo.RelPermalink}}"></a>
-    			</div>
-         </section>
-         <section id="activity" class="column">
-              {{- partial "activity_log" . -}}
-         </section>
-      </div>
+      				<a id="sci_link" href="https://stimuleringsfonds.nl/en/"><img id="sci_logo" src="{{ $sci_logo.RelPermalink}}">
+              </a>
+
+              <h3> Contact </h3>
+               {{- with .Site.GetPage "/headless_contact" -}}
+                {{- .Content -}}
+               {{- end -}}
+    			   </div>
+
+          </div>
+       </section>
+       <section id="activity" aria-label="project activity">
+          <div class="content">
+            {{- partial "activity_log" . -}}
+          </div>
+       </section>
     </main>
 {{- end -}}
  
