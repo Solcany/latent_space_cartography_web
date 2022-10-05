@@ -4,7 +4,7 @@ date: 2021-12-08T21:04:08+01:00
 draft: false
 ---
 {{< video src="media/imgs_output" alt="a rotating cloud of tiny painted portraits on black background" autoplay="true" 
-muted="true" loop="true" controls="false" caption="Clustering by visual similarity">}}
+muted="true" loop="true" controls="true" caption="Clustering by visual similarity">}}
 
 
 {{< video src="media/vectors_output" alt="a rotating cloud of tiny painted portraits on black background" autoplay="true" muted="true" loop="true" controls="false" caption="Clustering by visual similarity">}}
