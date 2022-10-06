@@ -24,6 +24,8 @@ $bronze-2: #5E583B;
 $bronze-1: #4F4A30; 
 $bronze-1-transparent-gradient: linear-gradient(0deg, rgba(79, 74, 48, 1) 7%, rgba(79, 74, 48, 0) 100%);
 $bronze-0: #403C26; 
+$bronze-0-transparent-gradient: linear-gradient(0deg, rgba(64, 60, 38, 1) 7%, rgba(64, 60, 38, 0) 100%);
+
 $lightgray: #b5b5b5;
 
 $transition-time: 0.3s;
@@ -126,6 +128,15 @@ body {
                 height: 100%;
                 box-sizing: border-box;
                 width: 100%;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    height: 15px;
+                    bottom: 0;
+                }
 
                 .content {
                     width: $content-width;
@@ -161,11 +172,19 @@ body {
 
                 &#introduction {
                     background-color: $bronze-2;
+
+                    &:after{
+                        background: $bronze-1-transparent-gradient;
+                    }                    
                 }
 
                 &#about {
                     background-color: $bronze-1;
                     position: relative;
+
+                    &:after{
+                        background: $bronze-0-transparent-gradient;
+                    }
 
                     .content {
                         a#show, a#hide {
