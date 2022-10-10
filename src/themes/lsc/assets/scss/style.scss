@@ -128,14 +128,16 @@ body {
                 height: 100%;
                 box-sizing: border-box;
                 width: 100%;
-                position: relative;
+                //position: relative;
 
+
+                // blurry gradient transition between page sections
                 &::after {
-                    content: "";
-                    width: 100%;
-                    position: absolute;
-                    height: 15px;
-                    bottom: 0;
+                    // content: "";
+                    // width: 100%;
+                    // position: absolute;
+                    // height: 15px;
+                    // bottom: 0;
                 }
 
                 .content {
@@ -146,7 +148,7 @@ body {
                     padding-bottom: $offset3;
 
                     @media #{$breakpoint-not-small} {
-                      padding-bottom: $offset4;
+                      padding-bottom: $offset5;
                       padding-left: 0;
                       padding-right: 0;
                       width: $not-small-content-width;
@@ -175,10 +177,14 @@ body {
 
                     &:after{
                         background: $bronze-1-transparent-gradient;
-                    }                    
+                    }         
+
+                    .content {
+                        padding-bottom: $offset4;
+                    }           
                 }
 
-                &#about {
+                &#about { 
                     background-color: $bronze-1;
                     position: relative;
 
